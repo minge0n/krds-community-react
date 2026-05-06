@@ -1,0 +1,59 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="가이드/패턴" />
+
+# 패턴 가이드
+
+컴포넌트를 조합하여 실제 서비스 화면을 구성하는 방법입니다.
+
+## 기본 패턴 (11개)
+
+| 패턴 | 핵심 컴포넌트 | 용도 |
+|------|-------------|------|
+| 입력 폼 | TextInput, Select, Checkbox, Button | 사용자 데이터 수집 |
+| 목록 탐색 | StructuredList, Pagination, Tag | 데이터 목록 표시 |
+| 확인 | Modal, Button | 되돌릴 수 없는 액션 확인 |
+| 동의 | Checkbox, Accordion, Button | 약관 동의 |
+| 오류 | CriticalAlert, Modal, Link | 에러 안내 |
+| 도움 | Tooltip, CoachMark, HelpPanel | 사용 안내 |
+| 필터링·정렬 | Select, Checkbox, Tag, Table | 데이터 선별 |
+| 첨부파일 | FileUpload, StructuredList | 파일 업로드 |
+| 개인정보 입력 | TextInput, Select, StepIndicator | 본인 확인 |
+| 사용자 피드백 | Radio, Textarea, Button | 의견 수집 |
+| 상세 정보 | Tab, Accordion, Table, Badge | 정보 제공 |
+
+## 서비스 패턴 (5개)
+
+| 패턴 | 핵심 컴포넌트 | 용도 |
+|------|-------------|------|
+| 방문 | Masthead, Header, MainMenu, Footer | 서비스 첫 접속 |
+| 검색 | TextInput, Button, StructuredList, Pagination | 정보 탐색 |
+| 로그인 | TextInput, Button, Tab, Link | 신원 확인 |
+| 신청 | StepIndicator, TextInput, FileUpload, Modal | 양식 제출 |
+| 정책 정보 | Accordion, Tab, Table, InPageNavigation | 정책 확인 |
+
+## 버튼 계층 규칙
+
+| 계층 | 용도 | 페이지당 |
+|------|------|---------|
+| Primary | 가장 중요한 액션 | 1~2개 |
+| Secondary | 보조 액션 | 필요한 만큼 |
+| Tertiary | 저강조 | 필요한 만큼 |
+| Text | 인라인 | 필요한 만큼 |
+
+## 폼 규칙
+
+- 라벨은 인풋 위에 배치
+- 필수 필드는 `*` 표시
+- 에러 메시지는 해당 필드 바로 아래 (빨간색)
+- 힌트 텍스트는 필드 아래 (회색)
+- 제출 버튼은 폼 하단 우측에 Primary
+- 취소 버튼은 제출 버튼 좌측에 Tertiary
+
+## 모달 사용 조건
+
+- 사용자의 즉각적 주의가 필요할 때만
+- 단일 과업 또는 확인에만
+- 복잡한 폼은 별도 페이지로
+- 닫기 버튼(X) 항상 제공
+- 취소 옵션 항상 제공

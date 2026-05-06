@@ -1,0 +1,95 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="가이드/시작하기" />
+
+# 시작하기
+
+## 설치
+
+```bash
+npm install krds-community-react
+# or
+pnpm add krds-community-react
+```
+
+## CSS 설정
+
+```tsx
+// app/layout.tsx (Next.js) 또는 main.tsx (Vite)
+import "krds-community-react/styles";
+```
+
+## 기본 페이지 구조
+
+```tsx
+import {
+  Masthead, Header, SkipLink, Breadcrumb, BreadcrumbItem, Footer
+} from "krds-community-react";
+
+function Page() {
+  return (
+    <>
+      <SkipLink targetId="main-content" />
+      <Masthead />
+      <Header title="서비스명" />
+      <Breadcrumb>
+        <BreadcrumbItem home href="/">홈</BreadcrumbItem>
+        <BreadcrumbItem href="/services">서비스</BreadcrumbItem>
+        <BreadcrumbItem current>현재 페이지</BreadcrumbItem>
+      </Breadcrumb>
+      <main id="main-content">
+        {/* 본문 */}
+      </main>
+      <Footer />
+    </>
+  );
+}
+```
+
+## 폼 구성
+
+```tsx
+import { TextInput, Select, Checkbox, Button } from "krds-community-react";
+
+function Form() {
+  return (
+    <form>
+      <TextInput label="이름" placeholder="이름을 입력해 주세요" />
+      <Select
+        label="지역"
+        options={[
+          { value: "seoul", label: "서울특별시" },
+          { value: "busan", label: "부산광역시" },
+        ]}
+      />
+      <Checkbox label="개인정보 수집·이용에 동의합니다" />
+      <Button variant="primary">제출</Button>
+    </form>
+  );
+}
+```
+
+## Next.js App Router
+
+모든 컴포넌트에 `'use client'`가 포함되어 Server Component에서 직접 import 가능:
+
+```tsx
+// app/page.tsx
+import { Button } from "krds-community-react";
+
+export default function Page() {
+  return <Button variant="primary">확인</Button>;
+}
+```
+
+## 네비게이션 구조
+
+```
+┌─ Masthead (정부 공식 배너)
+├─ Header (로고 + 검색 + 메인메뉴)
+├─ Breadcrumb (현재 위치)
+├─ [SideNavigation] (서브 페이지)
+├─ main
+│  └─ 본문 콘텐츠
+└─ Footer (기관 정보 + 링크)
+```

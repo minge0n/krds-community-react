@@ -1,0 +1,57 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="소개" />
+
+# KRDS Community React
+
+대한민국 디지털 정부서비스 UI/UX 디자인 시스템(KRDS)의 커뮤니티 React 구현체입니다.
+
+## 특징
+
+- **Base UI 헤드리스** — 접근성이 검증된 Base UI 위에 KRDS 스타일링
+- **56개 컴포넌트** — 공식 KRDS 55개 + Dropdown
+- **Next.js 호환** — `'use client'` 자동 삽입
+- **CSS 토큰 기반** — KRDS 공식 디자인 토큰 사용
+- **접근성 우선** — WCAG AA 준수, High Contrast 모드 지원
+- **Pretendard GOV** — 정부 전용 가변 폰트 CDN 제공
+
+## 설치
+
+```bash
+npm install krds-community-react
+```
+
+## 기본 사용법
+
+```tsx
+import { Button, TextInput } from "krds-community-react";
+import "krds-community-react/styles";
+
+function App() {
+  return <Button variant="primary">신청하기</Button>;
+}
+```
+
+## 디자인 원칙
+
+| 원칙 | 내용 |
+|------|------|
+| 색상 비율 | 60% 배경 / 30% 세컨더리 / 10% 프라이머리 |
+| 타이포 | Pretendard GOV, Regular+Bold, 최소 17px |
+| Line height | 150% (모든 텍스트) |
+| Border radius | 컨테이너 높이 × 1/8, 최대 12px |
+| 엘리베이션 | 보더 우선, 그림자는 기능적 용도에만 |
+
+## 컴포넌트 카테고리
+
+| 카테고리 | 컴포넌트 |
+|----------|----------|
+| 아이덴티티 | Masthead, Identifier, Header, Footer |
+| 탐색 | SkipLink, MainMenu, Breadcrumb, SideNavigation, InPageNavigation, Pagination |
+| 레이아웃 | StructuredList, CriticalAlert, Calendar, Disclosure, Modal, Badge, Accordion, Tab, Table, TextList |
+| 액션 | Link, Button, FAB, Dropdown |
+| 선택 | Radio, Checkbox, Select, Tag, ToggleSwitch |
+| 피드백 | StepIndicator, Spinner |
+| 도움 | HelpPanel, TutorialPanel, ContextualHelp, CoachMark, Tooltip, TTS |
+| 입력 | DateInput, Textarea, TextInput, FileUpload |
+| 모바일 | RangeSlider, BackButton, BottomSheet, QuantityToggle, Toast, Snackbar, TabBar, SplashScreen |
