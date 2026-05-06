@@ -1,23 +1,83 @@
 @import "./base.css";
 @import "./tokens.css";
-@import "../components/button/button.css";
-@import "../components/accordion/accordion.css";
-@import "../components/badge/badge.css";
+
+/* Identity */
+@import "../components/masthead/masthead.css";
+@import "../components/identifier/identifier.css";
+@import "../components/header/header.css";
+@import "../components/footer/footer.css";
+
+/* Navigation */
+@import "../components/skip-link/skip-link.css";
+@import "../components/main-menu/main-menu.css";
 @import "../components/breadcrumb/breadcrumb.css";
-@import "../components/checkbox/checkbox.css";
-@import "../components/disclosure/disclosure.css";
-@import "../components/link/link.css";
-@import "../components/modal/modal.css";
+@import "../components/side-navigation/side-navigation.css";
+@import "../components/in-page-navigation/in-page-navigation.css";
 @import "../components/pagination/pagination.css";
-@import "../components/radio/radio.css";
-@import "../components/select/select.css";
-@import "../components/spinner/spinner.css";
+
+/* Layout & Display */
+@import "../components/structured-list/structured-list.css";
+@import "../components/critical-alert/critical-alert.css";
+@import "../components/calendar/calendar.css";
+@import "../components/disclosure/disclosure.css";
+@import "../components/modal/modal.css";
+@import "../components/badge/badge.css";
+@import "../components/accordion/accordion.css";
+@import "../components/image/image.css";
+@import "../components/carousel/carousel.css";
 @import "../components/tab/tab.css";
 @import "../components/table/table.css";
+@import "../components/text-list/text-list.css";
+@import "../components/favicon/favicon.css";
+
+/* Action */
+@import "../components/link/link.css";
+@import "../components/button/button.css";
+@import "../components/fab/fab.css";
+@import "../components/dropdown/dropdown.css";
+
+/* Selection */
+@import "../components/radio/radio.css";
+@import "../components/checkbox/checkbox.css";
+@import "../components/select/select.css";
 @import "../components/tag/tag.css";
-@import "../components/text-input/text-input.css";
-@import "../components/textarea/textarea.css";
 @import "../components/toggle-switch/toggle-switch.css";
-@import "../components/tooltip/tooltip.css";
-@import "../components/skip-link/skip-link.css";
+
+/* Feedback */
 @import "../components/step-indicator/step-indicator.css";
+@import "../components/spinner/spinner.css";
+
+/* Help */
+@import "../components/help-panel/help-panel.css";
+@import "../components/tutorial-panel/tutorial-panel.css";
+@import "../components/contextual-help/contextual-help.css";
+@import "../components/coach-mark/coach-mark.css";
+@import "../components/tooltip/tooltip.css";
+@import "../components/tts/tts.css";
+
+/* Input */
+@import "../components/date-input/date-input.css";
+@import "../components/textarea/textarea.css";
+@import "../components/text-input/text-input.css";
+@import "../components/file-upload/file-upload.css";
+
+/* Settings */
+@import "../components/language-switcher/language-switcher.css";
+@import "../components/resize/resize.css";
+
+/* Content */
+@import "../components/accessible-media/accessible-media.css";
+@import "../components/visually-hidden/visually-hidden.css";
+
+/* Mobile */
+@import "../components/range-slider/range-slider.css";
+@import "../components/back-button/back-button.css";
+@import "../components/bottom-sheet/bottom-sheet.css";
+@import "../components/quantity-toggle/quantity-toggle.css";
+@import "../components/toast/toast.css";
+@import "../components/snackbar/snackbar.css";
+@import "../components/tab-bar/tab-bar.css";
+@import "../components/splash-screen/splash-screen.css";
+
+/* Provider */
+@import "../components/theme-provider/theme-provider.css";

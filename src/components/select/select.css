@@ -56,6 +56,19 @@
   z-index: 1000;
   max-height: 24rem;
   overflow-y: auto;
+  transform-origin: top center;
+  animation: krds-select-popup-open 0.2s var(--krds-transition-base);
+}
+
+@keyframes krds-select-popup-open {
+  from {
+    opacity: 0;
+    transform: scaleY(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
 
 .krds-select-item {
@@ -66,6 +79,7 @@
   font-size: var(--krds-pc-font-size-body-medium);
   color: var(--krds-light-color-text-basic);
   cursor: pointer;
+  transition: var(--krds-transition-base);
 }
 
 .krds-select-item[data-highlighted] {

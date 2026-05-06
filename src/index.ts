@@ -119,3 +119,6 @@ export { SplashScreen } from "./components/splash-screen/index.js";
 export { Resize } from "./components/resize/index.js";
 
 export { Dropdown, DropdownItem } from "./components/dropdown/index.js";
+
+export type { ThemeProviderProps } from "./components/theme-provider/index.js";
+export { ThemeProvider, useTheme } from "./components/theme-provider/index.js";

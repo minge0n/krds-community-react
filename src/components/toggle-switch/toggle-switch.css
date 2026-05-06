@@ -15,7 +15,7 @@
   border: none;
   cursor: pointer;
   padding: 0.2rem;
-  transition: var(--krds-transition-base);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
 }
 
 .krds-switch[data-checked] {
@@ -38,12 +38,15 @@
   height: 2rem;
   border-radius: 50%;
   background-color: #fff;
+  border: 0.2rem solid var(--krds-light-color-element-gray);
+  box-sizing: border-box;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  transition: var(--krds-transition-base);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.23, 1);
 }
 
 .krds-switch[data-checked] .krds-switch-thumb {
   transform: translateX(2rem);
+  border-color: var(--krds-light-color-button-primary-fill);
 }
 
 .krds-form-toggle-switch label {

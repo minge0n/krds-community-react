@@ -30,6 +30,10 @@
   background-color: var(--krds-light-color-action-primary-hover);
 }
 
+.krds-pagination .page-link:active {
+  background-color: var(--krds-light-color-action-primary-pressed);
+}
+
 .krds-pagination .page-link.active {
   background-color: var(--krds-light-color-button-primary-fill);
   color: var(--krds-light-color-text-inverse-static);
@@ -55,15 +59,25 @@
   color: var(--krds-light-color-text-primary);
   text-decoration: none;
   border-radius: var(--krds-radius-medium1);
+  transition: var(--krds-transition-base);
 }
 
 .krds-pagination .page-navi:hover {
   background-color: var(--krds-light-color-action-primary-hover);
 }
 
+.krds-pagination .page-navi:active {
+  background-color: var(--krds-light-color-action-primary-pressed);
+}
+
 .krds-pagination .page-navi.disabled {
   color: var(--krds-light-color-text-disabled);
   pointer-events: none;
+}
+
+.krds-pagination .page-navi.disabled:hover,
+.krds-pagination .page-navi.disabled:active {
+  background-color: transparent;
 }
 
 .krds-pagination .page-navi:focus-visible {

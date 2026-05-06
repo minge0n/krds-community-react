@@ -20,7 +20,11 @@
 }
 
 .krds-disclosure .btn-conts-expand:hover {
-  background-color: var(--krds-light-color-surface-gray-subtler);
+  background-color: var(--krds-light-color-action-secondary-hover);
+}
+
+.krds-disclosure .btn-conts-expand:active {
+  background-color: var(--krds-light-color-action-secondary-pressed);
 }
 
 .krds-disclosure .btn-conts-expand::after {
@@ -45,7 +49,16 @@
 }
 
 .krds-disclosure .expand-wrap {
+  max-height: 0;
   overflow: hidden;
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.krds-disclosure .expand-wrap[data-open] {
+  max-height: 100vh;
+  visibility: visible;
+  transition: all 1.5s ease-in-out;
 }
 
 .krds-disclosure .expand-in {

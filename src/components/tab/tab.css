@@ -31,8 +31,20 @@
   transition: var(--krds-transition-base);
 }
 
-.krds-tab-area .btn-tab:hover {
+.krds-tab-area .btn-tab:not(:disabled):hover {
+  background-color: var(--krds-light-color-action-secondary-hover);
   color: var(--krds-light-color-text-basic);
+  transition: var(--krds-transition-base);
+}
+
+.krds-tab-area .btn-tab:not(:disabled):active {
+  background-color: var(--krds-light-color-action-secondary-pressed);
+  transition: var(--krds-transition-base);
+}
+
+.krds-tab-area .btn-tab[data-disabled] {
+  color: var(--krds-light-color-text-disabled);
+  cursor: default;
 }
 
 .krds-tab-area .btn-tab[data-selected] {
