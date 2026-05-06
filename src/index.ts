@@ -117,3 +117,5 @@ export { Snackbar } from "./components/snackbar/index.js";
 export { TabBar } from "./components/tab-bar/index.js";
 export { SplashScreen } from "./components/splash-screen/index.js";
 export { Resize } from "./components/resize/index.js";
+
+export { Dropdown, DropdownItem } from "./components/dropdown/index.js";
