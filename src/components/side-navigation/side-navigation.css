@@ -107,3 +107,12 @@
   font-size: var(--krds-pc-font-size-body-small);
   padding-left: var(--krds-padding-8);
 }
+
+/* Selected/current page */
+.krds-side-navigation-link[aria-current="page"],
+.krds-side-navigation-link[data-selected] {
+  color: var(--krds-light-color-text-primary);
+  font-weight: 700;
+  border-left: 3px solid var(--krds-light-color-border-primary);
+  padding-left: calc(var(--krds-padding-5) - 3px);
+}

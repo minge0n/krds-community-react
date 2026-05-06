@@ -53,3 +53,12 @@
   outline-offset: 1px;
   border-radius: 2px;
 }
+
+/* Tag hover */
+.krds-btn-tag:hover {
+  background-color: var(--krds-light-color-action-secondary-hover);
+}
+
+.krds-btn-tag:active {
+  background-color: var(--krds-light-color-action-secondary-pressed);
+}

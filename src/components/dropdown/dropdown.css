@@ -40,3 +40,8 @@
   outline: 2px solid var(--krds-light-color-border-primary);
   outline-offset: -2px;
 }
+
+/* Item active */
+.krds-drop-item:active:not([data-disabled]) {
+  background-color: var(--krds-light-color-action-primary-pressed);
+}

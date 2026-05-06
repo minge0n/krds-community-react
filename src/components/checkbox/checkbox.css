@@ -90,3 +90,12 @@
   color: var(--krds-light-color-text-subtle);
   margin: 0;
 }
+
+/* Hover & Active */
+.krds-checkbox:hover:not([data-disabled]) {
+  border-color: var(--krds-light-color-border-primary);
+}
+
+.krds-checkbox:active:not([data-disabled]) {
+  background-color: var(--krds-light-color-action-primary-hover);
+}

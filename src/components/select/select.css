@@ -100,3 +100,14 @@
   color: var(--krds-light-color-icon-primary);
   font-size: 1.4rem;
 }
+
+/* Active state */
+.krds-form-select:active:not([data-disabled]) {
+  border-color: var(--krds-light-color-input-border-active);
+}
+
+/* Popup open indicator */
+.krds-form-select[data-popup-open] .krds-select-icon {
+  transform: rotate(180deg);
+  transition: var(--krds-transition-base);
+}

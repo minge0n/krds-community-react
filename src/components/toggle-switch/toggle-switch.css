@@ -59,3 +59,12 @@
   color: var(--krds-light-color-text-disabled);
   cursor: not-allowed;
 }
+
+/* Hover & Active */
+.krds-switch:hover:not([data-disabled]) {
+  opacity: 0.85;
+}
+
+.krds-switch:active:not([data-disabled]) .krds-switch-thumb {
+  width: 2.4rem;
+}

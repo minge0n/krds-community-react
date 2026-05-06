@@ -53,3 +53,8 @@
   outline: 2px solid var(--krds-light-color-border-primary);
   outline-offset: 2px;
 }
+
+/* Thumb active */
+.krds-range-slider-thumb:active {
+  transform: scale(1.2);
+}
