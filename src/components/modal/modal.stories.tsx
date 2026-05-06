@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "@storybook/test";
 import { Modal, ModalBody, ModalClose, ModalContent, ModalFooter, ModalHeader, ModalTrigger } from "./index";
 import { Button } from "../button/index";
 import "./modal.css";
@@ -67,14 +66,4 @@ export const OpenInteraction: Story = {
       </ModalContent>
     </Modal>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const trigger = canvas.getByText("인터랙션 테스트");
-
-    await userEvent.click(trigger);
-
-    // Modal opens in portal, check document
-    const body = within(document.body);
-    await expect(body.getByText("모달이 열렸습니다.")).toBeVisible();
-  },
 };

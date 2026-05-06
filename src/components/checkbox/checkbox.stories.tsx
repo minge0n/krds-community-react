@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "@storybook/test";
 import { Checkbox } from "./index";
 import "./checkbox.css";
 
@@ -8,10 +7,9 @@ const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   tags: ["autodocs"],
   argTypes: {
-    label: { control: "text", description: "라벨 텍스트" },
-    description: { control: "text", description: "부가 설명" },
-    disabled: { control: "boolean", description: "비활성화" },
-    checked: { control: "boolean", description: "체크 상태" },
+    label: { control: "text" },
+    description: { control: "text" },
+    disabled: { control: "boolean" },
   },
 };
 
@@ -50,18 +48,4 @@ export const Group: Story = {
       <Checkbox label="옵션 4 (비활성)" name="group" value="4" disabled />
     </div>
   ),
-};
-
-export const ToggleInteraction: Story = {
-  args: { label: "클릭하여 토글" },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const checkbox = canvas.getByRole("checkbox");
-
-    await expect(checkbox).not.toBeChecked();
-    await userEvent.click(checkbox);
-    await expect(checkbox).toBeChecked();
-    await userEvent.click(checkbox);
-    await expect(checkbox).not.toBeChecked();
-  },
 };

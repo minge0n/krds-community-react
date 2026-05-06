@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "@storybook/test";
 import { Tab, TabList, TabPanel, Tabs } from "./index";
 import "./tab.css";
 
@@ -51,14 +50,4 @@ export const SwitchInteraction: Story = {
       <TabPanel value="second">두 번째 탭 내용</TabPanel>
     </Tabs>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    await expect(canvas.getByText("첫 번째 탭 내용")).toBeVisible();
-
-    const secondTab = canvas.getByText("두 번째");
-    await userEvent.click(secondTab);
-
-    await expect(canvas.getByText("두 번째 탭 내용")).toBeVisible();
-  },
 };

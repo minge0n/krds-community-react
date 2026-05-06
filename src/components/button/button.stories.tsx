@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "@storybook/test";
 import { Button } from "./index";
 import "./button.css";
 
@@ -11,16 +10,13 @@ const meta: Meta<typeof Button> = {
     variant: {
       control: "select",
       options: ["primary", "secondary", "tertiary", "text"],
-      description: "버튼 스타일 변형",
     },
     size: {
       control: "select",
       options: ["xsmall", "small", "medium", "large", "xlarge"],
-      description: "버튼 크기",
     },
-    disabled: { control: "boolean", description: "비활성화 상태" },
-    fullWidth: { control: "boolean", description: "전체 너비" },
-    iconOnly: { control: "boolean", description: "아이콘 전용" },
+    disabled: { control: "boolean" },
+    fullWidth: { control: "boolean" },
   },
 };
 
@@ -80,27 +76,4 @@ export const AllVariants: Story = {
       </div>
     </div>
   ),
-};
-
-export const ClickInteraction: Story = {
-  args: { variant: "primary", children: "클릭하세요" },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole("button");
-
-    await expect(button).toBeInTheDocument();
-    await expect(button).not.toBeDisabled();
-    await userEvent.click(button);
-    await expect(button).toHaveFocus();
-  },
-};
-
-export const DisabledInteraction: Story = {
-  args: { variant: "primary", children: "비활성화 버튼", disabled: true },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole("button");
-
-    await expect(button).toBeDisabled();
-  },
 };

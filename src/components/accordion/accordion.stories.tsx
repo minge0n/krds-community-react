@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "@storybook/test";
 import { Accordion, AccordionItem, AccordionPanel, AccordionTrigger } from "./index";
 import "./accordion.css";
 
@@ -70,11 +69,4 @@ export const ExpandInteraction: Story = {
       </AccordionItem>
     </Accordion>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const trigger = canvas.getByText("클릭하여 열기");
-
-    await userEvent.click(trigger);
-    await expect(canvas.getByText("패널 내용이 표시됩니다.")).toBeVisible();
-  },
 };

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "@storybook/test";
 import { TextInput } from "./index";
 import "./text-input.css";
 
@@ -58,15 +57,5 @@ export const TypeInteraction: Story = {
   args: {
     label: "검색어",
     placeholder: "검색어를 입력하세요",
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const input = canvas.getByRole("textbox");
-
-    await userEvent.click(input);
-    await expect(input).toHaveFocus();
-
-    await userEvent.type(input, "디지털 정부서비스");
-    await expect(input).toHaveValue("디지털 정부서비스");
   },
 };

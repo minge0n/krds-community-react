@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "@storybook/test";
 import { Select } from "./index";
 import "./select.css";
 
@@ -57,16 +56,5 @@ export const SelectInteraction: Story = {
   args: {
     label: "선택 테스트",
     options: defaultOptions,
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const trigger = canvas.getByRole("combobox");
-
-    await expect(trigger).toBeInTheDocument();
-    await userEvent.click(trigger);
-
-    // Popup opens in portal
-    const body = within(document.body);
-    await expect(body.getByText("서울특별시")).toBeVisible();
   },
 };

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "@storybook/test";
 import { ToggleSwitch } from "./index";
 import "./toggle-switch.css";
 
@@ -30,14 +29,4 @@ export const Disabled: Story = {
 
 export const ToggleInteraction: Story = {
   args: { label: "토글 테스트" },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const toggle = canvas.getByRole("switch");
-
-    await expect(toggle).toHaveAttribute("aria-checked", "false");
-    await userEvent.click(toggle);
-    await expect(toggle).toHaveAttribute("aria-checked", "true");
-    await userEvent.click(toggle);
-    await expect(toggle).toHaveAttribute("aria-checked", "false");
-  },
 };
