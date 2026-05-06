@@ -30,7 +30,7 @@
   transition: var(--krds-transition-base);
 }
 
-.krds-side-navigation-sublist[data-open] {
+.krds-side-navigation-sublist[aria-expanded="true"] {
   grid-template-rows: 1fr;
   opacity: 1;
   visibility: visible;

@@ -39,7 +39,7 @@
   transition: var(--krds-transition-base);
 }
 
-.krds-disclosure .btn-conts-expand[data-open]::after {
+.krds-disclosure .btn-conts-expand[data-panel-open]::after {
   transform: rotate(180deg);
 }
 
