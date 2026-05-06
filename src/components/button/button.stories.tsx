@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, within } from "@storybook/test";
 import { Button } from "./index";
 import "./button.css";
 
@@ -6,31 +7,45 @@ const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
   tags: ["autodocs"],
+  argTypes: {
+    variant: {
+      control: "select",
+      options: ["primary", "secondary", "tertiary", "text"],
+      description: "버튼 스타일 변형",
+    },
+    size: {
+      control: "select",
+      options: ["xsmall", "small", "medium", "large", "xlarge"],
+      description: "버튼 크기",
+    },
+    disabled: { control: "boolean", description: "비활성화 상태" },
+    fullWidth: { control: "boolean", description: "전체 너비" },
+    iconOnly: { control: "boolean", description: "아이콘 전용" },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {
-  args: {
-    children: "버튼",
-  },
+export const Primary: Story = {
+  args: { variant: "primary", children: "확인" },
 };
 
-export const Variants: Story = {
-  render: () => (
-    <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-      <Button variant="primary">Primary</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="tertiary">Tertiary</Button>
-      <Button variant="text">Text</Button>
-    </div>
-  ),
+export const Secondary: Story = {
+  args: { variant: "secondary", children: "취소" },
+};
+
+export const Tertiary: Story = {
+  args: { variant: "tertiary", children: "더보기" },
+};
+
+export const Text: Story = {
+  args: { variant: "text", children: "텍스트 버튼" },
 };
 
 export const Sizes: Story = {
   render: () => (
-    <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
       <Button size="xsmall">XSmall</Button>
       <Button size="small">Small</Button>
       <Button size="medium">Medium</Button>
@@ -41,40 +56,51 @@ export const Sizes: Story = {
 };
 
 export const Disabled: Story = {
-  args: {
-    children: "비활성화",
-    disabled: true,
-  },
+  args: { variant: "primary", children: "비활성화", disabled: true },
 };
 
 export const FullWidth: Story = {
-  args: {
-    children: "전체 너비 버튼",
-    fullWidth: true,
+  args: { variant: "primary", children: "전체 너비 버튼", fullWidth: true },
+};
+
+export const AllVariants: Story = {
+  render: () => (
+    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+      <div style={{ display: "flex", gap: "8px" }}>
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="tertiary">Tertiary</Button>
+        <Button variant="text">Text</Button>
+      </div>
+      <div style={{ display: "flex", gap: "8px" }}>
+        <Button variant="primary" disabled>Primary</Button>
+        <Button variant="secondary" disabled>Secondary</Button>
+        <Button variant="tertiary" disabled>Tertiary</Button>
+        <Button variant="text" disabled>Text</Button>
+      </div>
+    </div>
+  ),
+};
+
+export const ClickInteraction: Story = {
+  args: { variant: "primary", children: "클릭하세요" },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button");
+
+    await expect(button).toBeInTheDocument();
+    await expect(button).not.toBeDisabled();
+    await userEvent.click(button);
+    await expect(button).toHaveFocus();
   },
 };
 
-export const IconButton: Story = {
-  args: {
-    children: "검색",
-    iconOnly: true,
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M14 14l4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-};
+export const DisabledInteraction: Story = {
+  args: { variant: "primary", children: "비활성화 버튼", disabled: true },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button");
 
-export const WithIcon: Story = {
-  args: {
-    children: "다운로드",
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M8 2v9M4 8l4 4 4-4M2 14h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    iconPosition: "end",
+    await expect(button).toBeDisabled();
   },
 };

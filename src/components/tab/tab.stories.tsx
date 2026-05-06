@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Tabs, TabList, Tab, TabPanel } from "./index";
+import { expect, userEvent, within } from "@storybook/test";
+import { Tab, TabList, TabPanel, Tabs } from "./index";
 import "./tab.css";
 
 const meta: Meta<typeof Tabs> = {
@@ -15,28 +16,49 @@ export const Default: Story = {
   render: () => (
     <Tabs defaultValue="tab1">
       <TabList>
-        <Tab value="tab1">탭 1</Tab>
-        <Tab value="tab2">탭 2</Tab>
-        <Tab value="tab3">탭 3</Tab>
+        <Tab value="tab1">개인정보</Tab>
+        <Tab value="tab2">신청내역</Tab>
+        <Tab value="tab3">알림설정</Tab>
       </TabList>
-      <TabPanel value="tab1">첫 번째 탭의 내용입니다.</TabPanel>
-      <TabPanel value="tab2">두 번째 탭의 내용입니다.</TabPanel>
-      <TabPanel value="tab3">세 번째 탭의 내용입니다.</TabPanel>
+      <TabPanel value="tab1">개인정보 관리 화면입니다.</TabPanel>
+      <TabPanel value="tab2">신청내역 목록이 표시됩니다.</TabPanel>
+      <TabPanel value="tab3">알림 설정을 변경할 수 있습니다.</TabPanel>
     </Tabs>
   ),
 };
 
 export const FullWidth: Story = {
   render: () => (
-    <Tabs defaultValue="info">
+    <Tabs defaultValue="login">
       <TabList fullWidth>
-        <Tab value="info">기본 정보</Tab>
-        <Tab value="detail">상세 정보</Tab>
-        <Tab value="history">이력</Tab>
+        <Tab value="login">로그인</Tab>
+        <Tab value="signup">회원가입</Tab>
       </TabList>
-      <TabPanel value="info">기본 정보 내용입니다.</TabPanel>
-      <TabPanel value="detail">상세 정보 내용입니다.</TabPanel>
-      <TabPanel value="history">이력 내용입니다.</TabPanel>
+      <TabPanel value="login">로그인 폼 영역</TabPanel>
+      <TabPanel value="signup">회원가입 폼 영역</TabPanel>
     </Tabs>
   ),
+};
+
+export const SwitchInteraction: Story = {
+  render: () => (
+    <Tabs defaultValue="first">
+      <TabList>
+        <Tab value="first">첫 번째</Tab>
+        <Tab value="second">두 번째</Tab>
+      </TabList>
+      <TabPanel value="first">첫 번째 탭 내용</TabPanel>
+      <TabPanel value="second">두 번째 탭 내용</TabPanel>
+    </Tabs>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByText("첫 번째 탭 내용")).toBeVisible();
+
+    const secondTab = canvas.getByText("두 번째");
+    await userEvent.click(secondTab);
+
+    await expect(canvas.getByText("두 번째 탭 내용")).toBeVisible();
+  },
 };

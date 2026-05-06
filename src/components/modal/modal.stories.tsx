@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Modal, ModalTrigger, ModalContent, ModalHeader, ModalBody, ModalFooter, ModalClose } from "./index";
+import { expect, userEvent, within } from "@storybook/test";
+import { Modal, ModalBody, ModalClose, ModalContent, ModalFooter, ModalHeader, ModalTrigger } from "./index";
+import { Button } from "../button/index";
 import "./modal.css";
+import "../button/button.css";
 
 const meta: Meta<typeof Modal> = {
   title: "Components/Modal",
@@ -14,42 +17,16 @@ type Story = StoryObj<typeof Modal>;
 export const Default: Story = {
   render: () => (
     <Modal>
-      <ModalTrigger>모달 열기</ModalTrigger>
+      <ModalTrigger render={<Button variant="primary">모달 열기</Button>} />
       <ModalContent>
-        <ModalHeader>모달 제목</ModalHeader>
+        <ModalHeader>서비스 신청 확인</ModalHeader>
         <ModalBody>
-          <p>모달 본문 내용입니다. 여기에 다양한 콘텐츠를 배치할 수 있습니다.</p>
+          신청하신 서비스가 정상적으로 접수되었습니다. 처리 결과는 등록하신 연락처로
+          안내드리겠습니다.
         </ModalBody>
         <ModalFooter>
-          <button type="button" className="krds-btn primary medium">확인</button>
-        </ModalFooter>
-        <ModalClose />
-      </ModalContent>
-    </Modal>
-  ),
-};
-
-export const WithForm: Story = {
-  render: () => (
-    <Modal>
-      <ModalTrigger>정보 입력</ModalTrigger>
-      <ModalContent>
-        <ModalHeader>개인정보 입력</ModalHeader>
-        <ModalBody>
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <label>
-              이름
-              <input type="text" placeholder="이름을 입력하세요" style={{ display: "block", width: "100%", marginTop: "4px" }} />
-            </label>
-            <label>
-              이메일
-              <input type="email" placeholder="이메일을 입력하세요" style={{ display: "block", width: "100%", marginTop: "4px" }} />
-            </label>
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          <button type="button" className="krds-btn secondary medium">취소</button>
-          <button type="button" className="krds-btn primary medium">저장</button>
+          <ModalClose className="krds-btn medium tertiary">닫기</ModalClose>
+          <Button variant="primary" size="medium">확인</Button>
         </ModalFooter>
         <ModalClose />
       </ModalContent>
@@ -60,18 +37,44 @@ export const WithForm: Story = {
 export const Confirmation: Story = {
   render: () => (
     <Modal>
-      <ModalTrigger>삭제</ModalTrigger>
+      <ModalTrigger render={<Button variant="tertiary">삭제</Button>} />
       <ModalContent>
         <ModalHeader>삭제 확인</ModalHeader>
         <ModalBody>
-          <p>정말로 이 항목을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.</p>
+          선택한 항목을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.
         </ModalBody>
         <ModalFooter>
-          <button type="button" className="krds-btn secondary medium">취소</button>
-          <button type="button" className="krds-btn primary medium">삭제</button>
+          <ModalClose className="krds-btn medium tertiary">취소</ModalClose>
+          <Button variant="primary" size="medium">삭제</Button>
         </ModalFooter>
         <ModalClose />
       </ModalContent>
     </Modal>
   ),
+};
+
+export const OpenInteraction: Story = {
+  render: () => (
+    <Modal>
+      <ModalTrigger render={<Button>인터랙션 테스트</Button>} />
+      <ModalContent>
+        <ModalHeader>테스트 모달</ModalHeader>
+        <ModalBody>모달이 열렸습니다.</ModalBody>
+        <ModalFooter>
+          <ModalClose className="krds-btn medium primary">확인</ModalClose>
+        </ModalFooter>
+        <ModalClose />
+      </ModalContent>
+    </Modal>
+  ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const trigger = canvas.getByText("인터랙션 테스트");
+
+    await userEvent.click(trigger);
+
+    // Modal opens in portal, check document
+    const body = within(document.body);
+    await expect(body.getByText("모달이 열렸습니다.")).toBeVisible();
+  },
 };

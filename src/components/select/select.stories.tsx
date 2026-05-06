@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, userEvent, within } from "@storybook/test";
 import { Select } from "./index";
 import "./select.css";
 
@@ -6,66 +7,66 @@ const meta: Meta<typeof Select> = {
   title: "Components/Select",
   component: Select,
   tags: ["autodocs"],
+  argTypes: {
+    label: { control: "text", description: "라벨" },
+    hint: { control: "text", description: "도움말" },
+    error: { control: "text", description: "에러 메시지" },
+    invalid: { control: "boolean", description: "에러 상태" },
+    disabled: { control: "boolean", description: "비활성화" },
+    placeholder: { control: "text", description: "플레이스홀더" },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Select>;
 
+const defaultOptions = [
+  { value: "seoul", label: "서울특별시" },
+  { value: "busan", label: "부산광역시" },
+  { value: "daegu", label: "대구광역시" },
+  { value: "incheon", label: "인천광역시" },
+  { value: "gwangju", label: "광주광역시" },
+];
+
 export const Default: Story = {
   args: {
     label: "지역 선택",
-    options: [
-      { value: "seoul", label: "서울특별시" },
-      { value: "busan", label: "부산광역시" },
-      { value: "daegu", label: "대구광역시" },
-      { value: "incheon", label: "인천광역시" },
-      { value: "gwangju", label: "광주광역시" },
-    ],
+    hint: "거주 지역을 선택해 주세요",
+    options: defaultOptions,
   },
 };
 
-export const WithHint: Story = {
+export const WithError: Story = {
   args: {
-    label: "부서 선택",
-    hint: "소속 부서를 선택해 주세요.",
-    options: [
-      { value: "hr", label: "인사부" },
-      { value: "dev", label: "개발부" },
-      { value: "design", label: "디자인부" },
-    ],
-  },
-};
-
-export const Invalid: Story = {
-  args: {
-    label: "카테고리",
+    label: "지역 선택",
+    error: "필수 항목입니다",
     invalid: true,
-    error: "카테고리를 선택해 주세요.",
-    options: [
-      { value: "1", label: "카테고리 1" },
-      { value: "2", label: "카테고리 2" },
-    ],
+    options: defaultOptions,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    label: "상태",
+    label: "지역 선택",
     disabled: true,
-    options: [
-      { value: "active", label: "활성" },
-      { value: "inactive", label: "비활성" },
-    ],
+    options: defaultOptions,
   },
 };
 
-export const WithDisabledOption: Story = {
+export const SelectInteraction: Story = {
   args: {
-    label: "등급 선택",
-    options: [
-      { value: "basic", label: "기본" },
-      { value: "premium", label: "프리미엄" },
-      { value: "enterprise", label: "엔터프라이즈", disabled: true },
-    ],
+    label: "선택 테스트",
+    options: defaultOptions,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const trigger = canvas.getByRole("combobox");
+
+    await expect(trigger).toBeInTheDocument();
+    await userEvent.click(trigger);
+
+    // Popup opens in portal
+    const body = within(document.body);
+    await expect(body.getByText("서울특별시")).toBeVisible();
   },
 };
