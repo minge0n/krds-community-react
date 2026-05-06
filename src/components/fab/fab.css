@@ -1,0 +1,68 @@
+.krds-fab {
+  position: fixed;
+  bottom: var(--krds-padding-8);
+  right: var(--krds-padding-8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--krds-light-color-button-primary-fill);
+  color: var(--krds-light-color-text-inverse-static);
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--krds-light-color-alpha-shadow3);
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+  z-index: 100;
+}
+
+.krds-fab:hover {
+  background-color: var(--krds-light-color-button-primary-fill-hover);
+  box-shadow: 0 6px 16px var(--krds-light-color-alpha-shadow3);
+}
+
+.krds-fab:active {
+  background-color: var(--krds-light-color-button-primary-fill-pressed);
+  transform: scale(0.95);
+}
+
+.krds-fab:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+
+/* Sizes */
+.krds-fab.small {
+  width: 4rem;
+  height: 4rem;
+}
+
+.krds-fab.medium {
+  width: 5.6rem;
+  height: 5.6rem;
+}
+
+.krds-fab.large {
+  width: 7.2rem;
+  height: 7.2rem;
+}
+
+.krds-fab-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.krds-fab.small .krds-fab-icon {
+  font-size: 1.8rem;
+}
+
+.krds-fab.medium .krds-fab-icon {
+  font-size: 2.4rem;
+}
+
+.krds-fab.large .krds-fab-icon {
+  font-size: 3.2rem;
+}

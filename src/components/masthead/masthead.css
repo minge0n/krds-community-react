@@ -1,0 +1,42 @@
+.krds-masthead {
+  width: 100%;
+  background-color: var(--krds-light-color-surface-gray);
+  border-bottom: 1px solid var(--krds-light-color-border-gray-light);
+}
+
+.krds-masthead-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-gap-2);
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: var(--krds-padding-3) var(--krds-padding-6);
+}
+
+.krds-masthead-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.krds-masthead-logo img {
+  height: 1.6rem;
+  width: auto;
+}
+
+.krds-masthead-text {
+  margin: 0;
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-gray);
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .krds-masthead-inner {
+    padding: var(--krds-padding-2) var(--krds-padding-4);
+  }
+
+  .krds-masthead-text {
+    font-size: var(--krds-mobile-font-size-body-small);
+  }
+}

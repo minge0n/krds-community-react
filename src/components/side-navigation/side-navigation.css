@@ -1,0 +1,88 @@
+.krds-side-navigation {
+  width: 100%;
+  max-width: 26rem;
+}
+
+.krds-side-navigation-title {
+  margin: 0 0 var(--krds-gap-4);
+  padding: var(--krds-padding-4) var(--krds-padding-5);
+  font-size: var(--krds-pc-font-size-heading-small);
+  font-weight: 700;
+  color: var(--krds-light-color-text-basic);
+  border-bottom: 2px solid var(--krds-light-color-border-gray-dark);
+}
+
+.krds-side-navigation-list,
+.krds-side-navigation-sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.krds-side-navigation-sublist {
+  padding-left: var(--krds-padding-4);
+}
+
+.krds-side-navigation-item {
+  border-bottom: 1px solid var(--krds-light-color-border-gray-light);
+}
+
+.krds-side-navigation-item:last-child {
+  border-bottom: none;
+}
+
+.krds-side-navigation-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--krds-padding-4) var(--krds-padding-5);
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: var(--krds-pc-font-size-body-medium);
+  color: var(--krds-light-color-text-basic);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.krds-side-navigation-link:hover {
+  background-color: var(--krds-light-color-action-primary-hover);
+}
+
+.krds-side-navigation-link.active {
+  color: var(--krds-light-color-text-primary);
+  font-weight: 700;
+  background-color: var(--krds-light-color-action-primary-hover);
+  border-left: 3px solid var(--krds-light-color-border-primary);
+}
+
+.krds-side-navigation-link:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: -2px;
+}
+
+.krds-side-navigation-link-text {
+  flex: 1;
+}
+
+.krds-side-navigation-chevron {
+  flex-shrink: 0;
+  color: var(--krds-light-color-icon-gray);
+  transition: transform 0.2s ease;
+}
+
+.krds-side-navigation-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+.krds-side-navigation-item.level-1 .krds-side-navigation-link {
+  font-size: var(--krds-pc-font-size-body-small);
+  padding-left: var(--krds-padding-6);
+}
+
+.krds-side-navigation-item.level-2 .krds-side-navigation-link {
+  font-size: var(--krds-pc-font-size-body-small);
+  padding-left: var(--krds-padding-8);
+}

@@ -1,0 +1,18 @@
+.krds-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--krds-radius-medium1);
+}
+
+.krds-image-figure {
+  margin: 0;
+  display: inline-block;
+}
+
+.krds-image-caption {
+  margin-top: var(--krds-padding-3);
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-subtle);
+  text-align: center;
+}

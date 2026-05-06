@@ -1,0 +1,36 @@
+.krds-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--krds-gap-2);
+  padding: var(--krds-padding-3) var(--krds-padding-4);
+  border: none;
+  border-radius: var(--krds-radius-medium1);
+  background-color: transparent;
+  color: var(--krds-light-color-text-basic);
+  font-size: var(--krds-pc-font-size-label-medium);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.krds-back-button:hover {
+  background-color: var(--krds-light-color-surface-gray);
+}
+
+.krds-back-button:active {
+  background-color: var(--krds-light-color-surface-gray-dark);
+}
+
+.krds-back-button:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+
+.krds-back-button-icon {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.krds-back-button-label {
+  font-weight: 500;
+}

@@ -1,0 +1,15 @@
+.krds-tooltip-popup {
+  padding: var(--krds-padding-3) var(--krds-padding-5);
+  background-color: var(--krds-light-color-surface-inverse);
+  color: var(--krds-light-color-text-inverse-static);
+  font-size: var(--krds-pc-font-size-body-small);
+  border-radius: var(--krds-radius-medium1);
+  box-shadow: 0 2px 8px var(--krds-light-color-alpha-shadow2);
+  max-width: 24rem;
+  line-height: 1.5;
+  z-index: 1000;
+}
+
+.krds-tooltip-arrow {
+  fill: var(--krds-light-color-surface-inverse);
+}

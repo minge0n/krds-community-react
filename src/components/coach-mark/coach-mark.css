@@ -1,0 +1,141 @@
+.krds-coach-mark {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  max-width: 32rem;
+  background-color: var(--krds-light-color-surface-inverse);
+  border-radius: var(--krds-radius-medium2);
+  box-shadow: 0 4px 16px var(--krds-light-color-alpha-shadow2);
+  z-index: 1100;
+}
+
+.krds-coach-mark-arrow {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--krds-light-color-surface-inverse);
+  transform: rotate(45deg);
+}
+
+.krds-coach-mark.placement-top .krds-coach-mark-arrow {
+  bottom: -0.6rem;
+  left: 50%;
+  margin-left: -0.6rem;
+}
+
+.krds-coach-mark.placement-bottom .krds-coach-mark-arrow {
+  top: -0.6rem;
+  left: 50%;
+  margin-left: -0.6rem;
+}
+
+.krds-coach-mark.placement-left .krds-coach-mark-arrow {
+  right: -0.6rem;
+  top: 50%;
+  margin-top: -0.6rem;
+}
+
+.krds-coach-mark.placement-right .krds-coach-mark-arrow {
+  left: -0.6rem;
+  top: 50%;
+  margin-top: -0.6rem;
+}
+
+.krds-coach-mark-content {
+  position: relative;
+  padding: var(--krds-padding-5);
+}
+
+.krds-coach-mark-close {
+  position: absolute;
+  top: var(--krds-padding-3);
+  right: var(--krds-padding-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: none;
+  background: none;
+  border-radius: var(--krds-radius-round);
+  font-size: 1.6rem;
+  color: var(--krds-light-color-text-inverse-static);
+  cursor: pointer;
+}
+
+.krds-coach-mark-close:hover {
+  opacity: 0.8;
+}
+
+.krds-coach-mark-close:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+
+.krds-coach-mark-title {
+  margin: 0 0 var(--krds-gap-2);
+  font-size: var(--krds-pc-font-size-label-medium);
+  font-weight: 700;
+  color: var(--krds-light-color-text-inverse-static);
+}
+
+.krds-coach-mark-desc {
+  margin: 0;
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-inverse-static);
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.krds-coach-mark-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--krds-gap-4);
+}
+
+.krds-coach-mark-steps {
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-inverse-static);
+  opacity: 0.7;
+}
+
+.krds-coach-mark-actions {
+  display: flex;
+  gap: var(--krds-gap-2);
+}
+
+.krds-coach-mark-btn {
+  padding: var(--krds-padding-2) var(--krds-padding-4);
+  border: none;
+  border-radius: var(--krds-radius-small3);
+  font-family: inherit;
+  font-size: var(--krds-pc-font-size-label-small);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.krds-coach-mark-btn.prev {
+  background: transparent;
+  color: var(--krds-light-color-text-inverse-static);
+  border: 1px solid var(--krds-light-color-text-inverse-static);
+  opacity: 0.8;
+}
+
+.krds-coach-mark-btn.prev:hover {
+  opacity: 1;
+}
+
+.krds-coach-mark-btn.next {
+  background-color: var(--krds-light-color-button-primary-fill);
+  color: var(--krds-light-color-text-inverse-static);
+}
+
+.krds-coach-mark-btn.next:hover {
+  background-color: var(--krds-light-color-button-primary-fill-hover);
+}
+
+.krds-coach-mark-btn:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}

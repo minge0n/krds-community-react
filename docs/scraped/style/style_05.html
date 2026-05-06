@@ -1,0 +1,1818 @@
+<!-- source: https://www.krds.go.kr/html/site/style/style_05.html -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta name="keywords" content="레이아웃(Layout), 그리드 요소, 브레이크포인트, 콘텐츠 영역, 서브 페이지 레이아웃, 간격 적용" />
+  <meta name="description" content="레이아웃(Layout)은 정보 구조와 시각적 흐름을 체계적으로 구성하여 사용자가 콘텐츠를 쉽게 이해할 수 있도록 한다. 레이아웃 가이드는 그리드, 브레이크포인트, 간격 설정을 통해 일관된 사용자 경험을 제공하며, 시각적 일관성과 정보 전달 효과를 높인다." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.krds.go.kr/" />
+  <meta property="og:title" content="레이아웃(Layout) | 스타일 가이드 - KRDS" />
+  <meta property="og:description" content="레이아웃(Layout)은 정보 구조와 시각적 흐름을 체계적으로 구성하여 사용자가 콘텐츠를 쉽게 이해할 수 있도록 한다. 레이아웃 가이드는 그리드, 브레이크포인트, 간격 설정을 통해 일관된 사용자 경험을 제공하며, 시각적 일관성과 정보 전달 효과를 높인다." />
+  <meta property="og:image" content="https://www.krds.go.kr/resources/img/guide/KRDS_Open_Graph.png" />
+
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../resources/img/guide/favicon_180.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../../resources/img/guide/favicon_512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../../resources/img/guide/favicon_192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../resources/img/guide/favicon_32.png">
+  <title>레이아웃(Layout) | 스타일 가이드 - KRDS</title>
+  <!-- css -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
+  <link href="../../../resources/css/plugin/swiper-bundle.min.css" type="text/css" rel="stylesheet" />
+  <link href="../../../resources/css/site/output.css" type="text/css" rel="stylesheet" />
+  <link href="../../../resources/css/code/prism.css" type="text/css" rel="stylesheet" />
+
+  <!-- script -->
+  <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+  <script src="../../../resources/js/code/prism.js"></script>
+  <script defer src="../../../resources/js/component/ui-script.js"></script>
+  <script defer src="../../../resources/js/site/ui-guide-script.js"></script>
+
+  <!-- videoJS -->
+  <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
+  <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M28WTVTBEC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-M28WTVTBEC');
+  </script>
+
+  <script>
+    // 페이지 로드 시 실행
+    window.onload = function() {
+      // 현재 URL 가져오기
+      const currentUrl = window.location.href;
+      // 기존 og:url 메타 태그 찾기
+      let ogUrlMeta = document.querySelector('meta[property="og:url"]');
+      // content 속성 업데이트
+      ogUrlMeta.setAttribute('content', currentUrl);
+    };
+  </script>
+
+  <div class="modal-wrap">
+    <!-- 모달 : 통합 검색 -->
+    <div id="popTotalSch" class="krds-modal fade in" data-type="full" aria-labelledby="tit_total_sch" role="dialog">
+      <!-- modal-dialog -->
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- modal title -->
+          <div class="modal-header sr-only">
+            <h2 id="tit_total_sch" class="modal-title">통합검색</h2>
+          </div>
+          <!-- //modal title -->
+          <!-- modal contents -->
+          <div class="modal-conts" tabindex="0">
+            <!-- 통합검색 -->
+            <div class="pop-total-serch-wrap">
+              <!-- 통합검색 정보입력 영역 -->
+              <div class="search-total-top">
+                <!-- 검색어 타이틀 -->
+                <div class="search-tit">
+                  <label for="search-total-input-id">검색어를 입력해주세요</label>
+                  <!-- <a href="#" class="krds-btn medium text">검색에 어려움이 있으신가요? <i class="svg-icon ico-login-go"></i></a> -->
+                </div>
+                <!-- //검색어 타이틀 -->
+
+                <!-- 검색어 입력 폼 -->
+                <div class="sch-form-wrap vert">
+                  <div class="sch-input">
+                    <input type="text" class="krds-input xlarge" id="searchWrd-total" placeholder="검색어를 입력해주세요.">
+                    <button type="button" class="krds-btn icon xlarge ico-search" id="btn-search-total">
+                      <span class="sr-only">검색</span>
+                      <i class="svg-icon ico-sch"></i>
+                    </button>
+                  </div>
+                  <!-- <button type="button" class="krds-btn medium text"><i class="svg-icon ico-sch-plus"></i>고급검색</button> -->
+                </div>
+                <!-- //검색어 입력 폼 -->
+              </div>
+              <!-- //통합검색 정보입력 영역 -->
+
+              <!-- 검색어 리스트 -->
+              <!-- <div class="search-text">
+                <ul class="sch-info-list">
+                  <li class="sch-info-item word-popular">
+                    <h3 class="tit">인기검색어</h3>
+                    <ol class="list word-popular-list">
+                      <li>
+                        <span class="ranking-txt">안전보건교육</span>
+                        <span class="ranking-state up"><em class="sr-only">상승</em>1</span>
+                      </li>
+                      <li>
+                        <span class="ranking-txt">산업재해조사표</span>
+                        <span class="ranking-state same"><em class="sr-only">동일</em></span>
+                      </li>
+                      <li>
+                        <span class="ranking-txt">퇴직금계산기</span>
+                        <span class="ranking-state up"><em class="sr-only">상승</em>3</span>
+                      </li>
+                      <li>
+                        <span class="ranking-txt">육아휴직급여</span>
+                        <span class="ranking-state same"><em class="sr-only">동일</em></span>
+                      </li>
+                      <li>
+                        <span class="ranking-txt">실업인정신청</span>
+                        <span class="ranking-state same"><em class="sr-only">동일</em></span>
+                      </li>
+                      <li>
+                        <span class="ranking-txt">국민내일배움</span>
+                        <span class="ranking-state down"><em class="sr-only">하락</em>1</span>
+                      </li>
+                      <li>
+                        <span class="ranking-txt">노사협의회</span>
+                        <span class="ranking-state down"><em class="sr-only">하락</em>1</span>
+                      </li>
+                      <li>
+                        <span class="ranking-txt">산업안전보건</span>
+                        <span class="ranking-state same"><em class="sr-only">동일</em></span>
+                      </li>
+                      <li>
+                        <span class="ranking-txt">국민내일배움카드신청</span>
+                        <span class="ranking-state up"><em class="sr-only">상승</em>11</span>
+                      </li>
+                      <li>
+                        <span class="ranking-txt">안전보건교육</span>
+                        <span class="ranking-state same"><em class="sr-only">동일</em></span>
+                      </li>
+                    </ol>
+                  </li>
+                  <li class="sch-info-item word-lately">
+                    <h3 class="tit">최근검색어</h3>
+                    <ul id="recent-keyword-list" class="list" aria-live="polite">
+                      <li>
+                        <span class="word-txt">안전보건교육</span>
+                        <button type="button" class="krds-btn small icon">
+                          <span class="sr-only">삭제</span>
+                          <i class="svg-icon ico-delete-fill"></i>
+                        </button>
+                      </li>
+                    </ul>
+                    <button id="recent-clear-all" type="button" class="krds-btn medium text">
+					    최근검색어 전체 삭제 <i class="svg-icon ico-delete-fill"></i>
+					</button>
+                  </li>
+                </ul>
+              </div> -->
+              <!-- //검색어 리스트 -->
+            </div>
+            <!-- //통합검색 -->
+          </div>
+          <!-- //modal contents -->
+          <!-- close button -->
+          <button type="button" class="krds-btn xlarge icon btn-close close-modal">
+            <span class="sr-only">닫기</span>
+            <i class="svg-icon ico-popup-close"></i>
+          </button>
+          <!-- //close button -->
+        </div>
+      </div>
+      <!-- //modal-dialog -->
+      <div class="modal-back in"></div>
+    </div>
+    <!-- //모달 : 통합 검색 -->
+  </div>
+
+  <script type="module">
+    import TotalSearchControl from '/resources/js/controls/total-search-control.js';
+    new TotalSearchControl('.modal-wrap');
+  </script>
+</head>
+
+<body>
+  <div id="wrap" class="g-wrap">
+    <!-- 본문 바로가기 영역  -->
+    <div id="krds-skip-link">
+      <a href="#breadcrumb-home">본문 바로가기</a>
+    </div>
+    <!-- //본문 바로가기 영역  -->
+
+    <!-- 상단 배너영역 -->
+    <div id="krds-masthead">
+      <div class="toggle-wrap">
+        <div class="toggle-head">
+          <div class="inner">
+            <span class="nuri-txt">이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+            <!-- <button type="button" class="krds-btn xsmall text toggle-btn">
+					공식 누리집 확인방법 <i class="svg-icon ico-angle"></i>
+					<span class="sr-only">열기</span>
+				</button> -->
+          </div>
+        </div>
+
+        <!-- <div class="toggle-body">
+      <div class="inner">
+        <dl class="nuri">
+          <dt>공식 누리집 주소 확인하기</dt>
+          <dd class="desc">
+            go.kr 주소를 사용하는 누리집은 대한민국 정부기관이 관리하는 누리집입니다.<br />
+            이밖에 or.kr 또는 .kr등 다른 도메인 주소를 사용하고 있다면 아래 URL에서 도메인 주소를 확인해 보세요
+          </dd>
+          <dd>
+            <a href="#" class="krds-btn xsmall text" target="_blank" title="새 창 열기"> 운영중인 공식 누리집보기 <i class="svg-icon ico-link"></i> </a>
+          </dd>
+        </dl>
+      </div>
+    </div> -->
+
+      </div>
+    </div>
+    <!-- //상단 배너영역 -->
+
+    <!-- 헤더 영역 -->
+    <header id="krds-header">
+      <!-- 헤더 컨텐츠 영역 -->
+      <div class="header-in">
+        <!-- 헤더 상단 기타메뉴 -->
+        <div class="header-container">
+          <div class="inner">
+            <div class="header-utility">
+              <ul class="utility-list">
+                <li>
+
+                  <!-- 언어설정: 언어전환 -->
+                  <div class="krds-drop-wrap krds-language">
+                    <!-- <button type="button" class="krds-btn small text drop-btn" aria-expanded="false">
+                      <i class="svg-icon ico-global"></i>
+                      Language
+                      <i class="svg-icon ico-toggle"></i>
+                    </button>
+                    <div class="drop-menu" style="display: none;">
+                      <div class="drop-in">
+                        <ul class="drop-list">
+                          <li><a href="#" class="item-link active" lang="ko">한국어<span class="sr-only">선택됨</span></a></li>
+                          <li><a href="/html/eng/index.html" class="item-link" lang="en">English (영어)<span class="sr-only"></span></a></li>
+                          <li><a href="#" class="item-link" lang="zh">中文 (중국어)<span class="sr-only"></span></a></li>
+                          <li><a href="#" class="item-link" lang="ja">日本語 (일본어)<span class="sr-only"></span></a></li>
+                          <li><a href="#" class="item-link" lang="fr">français (프랑스어)<span class="sr-only"></span></a></li>
+                        </ul>
+                      </div>
+                    </div> -->
+                    <a href="/html/eng/index.html">
+                      <button type="button" class="krds-btn small text drop-btn" aria-expanded="false">
+                        <i class="svg-icon ico-global"></i>&nbsp;English
+                      </button>
+                    </a>
+                  </div>
+                  <!-- 언어설정: 언어전환 -->
+
+                </li>
+                <!-- <li>
+									<div class="krds-drop-wrap">
+										<button type="button" class="krds-btn small text drop-btn">
+											지원 <i class="svg-icon ico-toggle"></i>
+										</button>
+										<div class="drop-menu">
+											<div class="drop-in">
+												<ul class="drop-list">
+													<li><a href="#" class="item-link">인증센터</a></li>
+													<li><a href="#" class="item-link">누리집안내지도</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li> -->
+                <li>
+                  <button type="button" class="krds-btn small text open-modal" data-target="modal_adjust_display">
+                    <i class="svg-icon ico-view-mode"></i> 글자&middot;화면 설정
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="header-branding">
+              <h2 class="logo">
+                <a href="/html/site/index.html">
+                  <span class="sr-only">KRDS - Korea Design System</span>
+                  <!-- <img src="../../../resources/img/guide/common/ico_logo_krds.svg" alt="KRDS"> -->
+                </a>
+              </h2>
+              <div class="header-actions">
+                <!-- <div class="sch-input">
+               <input type="text" id="searchWrd-total" class="krds-input small w" placeholder="검색어를 입력해 주세요." title="검색어를 입력해 주세요.">
+               <button type="button" class="krds-btn medium icon ico-search btn-exec" id="btn-search-total">
+                 <span class="sr-only">검색</span>
+                 <i class="svg-icon ico-sch"></i>
+               </button>
+             </div> -->
+                <button type="button" class="btn-navi sch open-modal" title="통합검색 레이어" data-target="popTotalSch">통합검색</button>
+                <!-- <a href="#" class="btn-navi login">로그인</a>
+              <button type="button" class="btn-navi join">회원가입</button> -->
+                <!-- <div class="krds-drop-wrap my-drop">
+                <button type="button" class="btn-navi my drop-btn" aria-expanded="false">나의 GOV</button>
+                <div class="drop-menu" style="display: none;">
+                  <div class="drop-in">
+                    <div class="drop-top">
+                      <p class="my-name">홍길동님</p>
+                      <dl class="my-time">
+                        <dt>로그아웃까지 남은 시간</dt>
+                        <dd>
+                          <span class="time">12:00</span>
+                          <button type="button" class="krds-btn small text h-auto">시간 연장</button>
+                        </dd>
+                      </dl>
+                    </div>
+                    <ul class="drop-list">
+                      <li><a href="#" class="item-link">나의 GOV 홈<span class="sr-only"></span></a></li>
+                      <li><a href="#" class="item-link">나의 신청내역<span class="sr-only"></span></a></li>
+                      <li><a href="#" class="item-link">나의 생활정보<span class="sr-only"></span></a></li>
+                      <li><a href="#" class="item-link">나의 정보관리<span class="sr-only"></span></a></li>
+                    </ul>
+                    <div class="drop-bottom">
+                      <button type="button" class="krds-btn medium text">
+                        <i class="svg-icon ico-logout"></i> 로그아웃
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                <button type="button" class="btn-navi all" aria-controls="mobile-nav">전체메뉴</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 메인메뉴 : 데스크탑 -->
+        <nav class="krds-main-menu">
+          <div class="inner">
+            <ul class="gnb-menu" aria-label="메인 메뉴">
+              <li>
+                <button type="button" class="gnb-main-trigger" data-trigger="gnb" aria-controls="gnb-main-menu-kkeovus" aria-expanded="false" aria-haspopup="true">시작하기</button>
+                <!-- gnb-toggle-wrap -->
+                <div class="gnb-toggle-wrap" id="gnb-main-menu-kkeovus">
+                  <!-- gnb-main-list -->
+                  <div class="gnb-main-list">
+                    <!-- gnb-sub-list -->
+                    <div class="gnb-sub-list single-list between">
+                      <div class="gnb-sub-content">
+                        <h2 class="sub-title"><span>시작하기</span></h2>
+                        <ul>
+                          <li><a href="#">KRDS 시작하기</a></li>
+                          <li><a href="#">디자이너</a></li>
+                          <li><a href="#">개발자</a></li>
+                          <li><a href="#">정부 관계자</a></li>
+                          <li><a href="#">리소스 다운로드</a></li>
+                        </ul>
+                      </div>
+                      <!-- <div class="gnb-sub-banner">
+                        <span class="krds-badge bg-secondary">신규 서비스</span>
+                        <button type="button" class="krds-btn medium text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+                      </div> -->
+                    </div>
+                    <!-- //gnb-sub-list -->
+                  </div>
+                  <!-- //gnb-main-list -->
+                </div>
+                <!-- //gnb-toggle-wrap -->
+              </li>
+              <li>
+                <button type="button" class="gnb-main-trigger" data-trigger="gnb" aria-controls="gnb-main-menu-kkeovus" aria-expanded="false" aria-haspopup="true">디자인 스타일</button>
+                <!-- gnb-toggle-wrap -->
+                <div class="gnb-toggle-wrap" id="gnb-main-menu-kkeovus">
+                  <!-- gnb-main-list -->
+                  <div class="gnb-main-list">
+                    <!-- gnb-sub-list -->
+                    <div class="gnb-sub-list single-list between">
+                      <div class="gnb-sub-content">
+                        <h2 class="sub-title"><span>디자인 스타일</span></h2>
+                        <ul>
+                          <li><a href="#">디자인 스타일 소개</a></li>
+                          <li><a href="#">색상</a></li>
+                          <li><a href="#">타이포그래피</a></li>
+                          <li><a href="#">형태</a></li>
+                          <li><a href="#">레이아웃</a></li>
+                          <li><a href="#">아이콘</a></li>
+                          <li><a href="#">엘리베이션</a></li>
+                          <li><a href="#">션명한 화면 모드</a></li>
+                          <li><a href="#">디자인 토큰</a></li>
+                        </ul>
+                      </div>
+                      <!-- <div class="gnb-sub-banner">
+                        <span class="krds-badge bg-secondary">신규 서비스</span>
+                        <button type="button" class="krds-btn medium text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+                      </div> -->
+                    </div>
+                    <!-- //gnb-sub-list -->
+                  </div>
+                  <!-- //gnb-main-list -->
+                </div>
+                <!-- //gnb-toggle-wrap -->
+              </li>
+              <li>
+                <button type="button" class="gnb-main-trigger" data-trigger="gnb" aria-controls="gnb-main-menu-kkeovus" aria-expanded="false" aria-haspopup="true">컴포넌트</button>
+                <!-- gnb-toggle-wrap -->
+                <div class="gnb-toggle-wrap" id="gnb-main-menu-kkeovus">
+                  <!-- gnb-main-list -->
+                  <div class="gnb-main-list">
+                    <!-- gnb-sub-list -->
+                    <div class="gnb-sub-list single-list between">
+                      <div class="gnb-sub-content">
+                        <h2 class="sub-title"><span>컴포넌트</span></h2>
+                        <ul>
+                          <li><a href="#">컴포넌트 소개</a></li>
+                          <li><a href="#">아이덴티티</a></li>
+                          <li><a href="#">탐색</a></li>
+                          <li><a href="#">레이아웃 및 표현</a></li>
+                          <li><a href="#">액션</a></li>
+                          <li><a href="#">선택</a></li>
+                          <li><a href="#">피드백</a></li>
+                          <li><a href="#">도움</a></li>
+                          <li><a href="#">입력</a></li>
+                          <li><a href="#">설정</a></li>
+                          <li><a href="#">콘텐츠</a></li>
+                        </ul>
+                      </div>
+                      <!-- <div class="gnb-sub-banner">
+                        <span class="krds-badge bg-secondary">신규 서비스</span>
+                        <button type="button" class="krds-btn medium text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+                      </div> -->
+                    </div>
+                    <!-- //gnb-sub-list -->
+                  </div>
+                  <!-- //gnb-main-list -->
+                </div>
+                <!-- //gnb-toggle-wrap -->
+              </li>
+              <li>
+                <button type="button" class="gnb-main-trigger" data-trigger="gnb" aria-controls="gnb-main-menu-kkeovus" aria-expanded="false" aria-haspopup="true">기본 패턴</button>
+                <!-- gnb-toggle-wrap -->
+                <div class="gnb-toggle-wrap" id="gnb-main-menu-kkeovus">
+                  <!-- gnb-main-list -->
+                  <div class="gnb-main-list">
+                    <!-- gnb-sub-list -->
+                    <div class="gnb-sub-list single-list between">
+                      <div class="gnb-sub-content">
+                        <h2 class="sub-title"><span>기본 패턴</span></h2>
+                        <ul>
+                          <li><a href="#">기본 패턴 소개</a></li>
+                          <li><a href="#">개인 식별 정보 입력</a></li>
+                          <li><a href="#">도움</a></li>
+                          <li><a href="#">동의</a></li>
+                          <li><a href="#">목록 탐색</a></li>
+                          <li><a href="#">사용자 피드백</a></li>
+                          <li><a href="#">상세 정보 확인</a></li>
+                          <li><a href="#">오류</a></li>
+                          <li><a href="#">입력 폼</a></li>
+                          <li><a href="#">첨부파일</a></li>
+                          <li><a href="#">필터링&middot;정렬</a></li>
+                          <li><a href="#">확인</a></li>
+                        </ul>
+                      </div>
+                      <!-- <div class="gnb-sub-banner">
+                        <span class="krds-badge bg-secondary">신규 서비스</span>
+                        <button type="button" class="krds-btn medium text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+                      </div> -->
+                    </div>
+                    <!-- //gnb-sub-list -->
+                  </div>
+                  <!-- //gnb-main-list -->
+                </div>
+                <!-- //gnb-toggle-wrap -->
+              </li>
+              <li>
+                <button type="button" class="gnb-main-trigger" data-trigger="gnb" aria-controls="gnb-main-menu-kkeovus" aria-expanded="false" aria-haspopup="true">서비스 패턴</button>
+                <!-- gnb-toggle-wrap -->
+                <div class="gnb-toggle-wrap" id="gnb-main-menu-kkeovus">
+                  <!-- gnb-main-list -->
+                  <div class="gnb-main-list">
+                    <!-- gnb-sub-list -->
+                    <div class="gnb-sub-list single-list between">
+                      <div class="gnb-sub-content">
+                        <h2 class="sub-title"><span>서비스 패턴</span></h2>
+                        <ul>
+                          <li><a href="#">서비스 패턴 소개</a></li>
+                          <li><a href="#">방문</a></li>
+                          <li><a href="#">검색</a></li>
+                          <li><a href="#">로그인</a></li>
+                          <li><a href="#">신청</a></li>
+                          <li><a href="#">정책 정보 확인</a></li>
+                        </ul>
+                      </div>
+                      <!-- <div class="gnb-sub-banner">
+                        <span class="krds-badge bg-secondary">신규 서비스</span>
+                        <button type="button" class="krds-btn medium text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+                      </div> -->
+                    </div>
+                    <!-- //gnb-sub-list -->
+                  </div>
+                  <!-- //gnb-main-list -->
+                </div>
+                <!-- //gnb-toggle-wrap -->
+              </li>
+              <li>
+                <button type="button" class="gnb-main-trigger" data-trigger="gnb" aria-controls="gnb-main-menu-kkeovus" aria-expanded="false" aria-haspopup="true">소식&middot;소통</button>
+                <!-- gnb-toggle-wrap -->
+                <div class="gnb-toggle-wrap" id="gnb-main-menu-kkeovus">
+                  <!-- gnb-main-list -->
+                  <div class="gnb-main-list">
+                    <!-- gnb-sub-list -->
+                    <div class="gnb-sub-list single-list between">
+                      <div class="gnb-sub-content">
+                        <h2 class="sub-title"><span>소식&middot;소통</span></h2>
+                        <ul>
+                          <li><a href="#">새소식</a></li>
+                          <li><a href="#">자주 묻는 질문</a></li>
+                          <li><a href="#">적용 사례</a></li>
+                          <li><a href="#">자료실</a></li>
+                          <li><a href="#">문의 및 건의</a></li>
+                        </ul>
+                      </div>
+                      <!-- <div class="gnb-sub-banner">
+                        <span class="krds-badge bg-secondary">신규 서비스</span>
+                        <button type="button" class="krds-btn medium text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+                      </div> -->
+                    </div>
+                    <!-- //gnb-sub-list -->
+                  </div>
+                  <!-- //gnb-main-list -->
+                </div>
+                <!-- //gnb-toggle-wrap -->
+              </li>
+              <li>
+                <button type="button" class="gnb-main-trigger" data-trigger="gnb" aria-controls="gnb-main-menu-kkeovus" aria-expanded="false" aria-haspopup="true">KRDS 소개</button>
+                <!-- gnb-toggle-wrap -->
+                <div class="gnb-toggle-wrap" id="gnb-main-menu-kkeovus">
+                  <!-- gnb-main-list -->
+                  <div class="gnb-main-list">
+                    <!-- gnb-sub-list -->
+                    <div class="gnb-sub-list single-list between">
+                      <div class="gnb-sub-content">
+                        <h2 class="sub-title"><span>KRDS 소개</span></h2>
+                        <ul>
+                          <li><a href="#">KRDS 소개</a></li>
+                          <li><a href="#">UI/UX 가이드라인 소개</a></li>
+                          <li><a href="#">디자인 원칙</a></li>
+                          <li><a href="#">네이밍 원칙</a></li>
+                          <li><a href="#">디지털 포용</a></li>
+                          <li><a href="#">이용 안내</a></li>
+                          <li><a href="#">저작권</a></li>
+                        </ul>
+                      </div>
+                      <!-- <div class="gnb-sub-banner">
+                        <span class="krds-badge bg-secondary">신규 서비스</span>
+                        <button type="button" class="krds-btn medium text">메뉴명 <i class="svg-icon ico-angle right"></i></button>
+                      </div> -->
+                    </div>
+                    <!-- //gnb-sub-list -->
+                  </div>
+                  <!-- //gnb-main-list -->
+                </div>
+                <!-- //gnb-toggle-wrap -->
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- //메인메뉴 : 데스크탑 -->
+
+        <!-- //헤더 상단 기타메뉴 -->
+      </div>
+      <!-- //헤더 컨텐츠 영역 -->
+
+      <!-- 메인메뉴 : 모바일 -->
+      <nav id="mobile-nav" class="krds-main-menu-mobile">
+        <div class="gnb-wrap">
+
+          <!-- search-layer-->
+          <div class="search-layer">
+            <div class="search-header">
+              <!-- 검색 -->
+              <div class="sch-input">
+                <input type="text" class="krds-input" placeholder="찾고자 하는 메뉴명을 입력해 주세요" title="찾고자 하는 메뉴명 입력" id="mobileMenuSearchInput">
+                <button type="button" class="krds-btn medium icon ico-search" id="mobileMenuSearchButton">
+                  <span class="sr-only">검색</span>
+                  <i class="svg-icon ico-sch"></i>
+                </button>
+              </div>
+              <!-- //검색 -->
+            </div>
+            <div class="search-body">
+            </div>
+            <!-- layer-close -->
+            <button type="button" class="krds-btn medium icon search-close">
+              <span class="sr-only">메뉴검색 닫기</span>
+              <i class="svg-icon ico-popup-close"></i>
+            </button>
+            <!-- layer-close -->
+          </div>
+          <!-- //search-layer -->
+
+          <!-- gnb-wrap-inner -->
+          <div class="gnb-wrap-inner">
+            <!-- gnb-header -->
+            <div class="gnb-header">
+              <!-- gnb-utils -->
+              <div class="gnb-utils">
+                <ul class="utility-list">
+                  <li>
+                    <button type="button" class="krds-btn small text open-modal" data-target="modal_adjust_display">
+                      <i class="svg-icon ico-view-mode"></i> 글자&middot;화면 설정
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <!-- //gnb-utils -->
+              <!-- 검색 -->
+              <div class="sch-input">
+                <button type="button" class="krds-input dummy-control">
+                  <span class="dummy-text">찾고자 하는 메뉴명을 입력해 주세요.</span>
+                  <span class="krds-btn medium icon ico-search">
+                    <i class="svg-icon ico-sch"></i>
+                  </span>
+                </button>
+              </div>
+              <!-- //검색 -->
+            </div>
+            <!-- //gnb-header -->
+
+            <!-- gnb-body -->
+            <div class="gnb-body">
+              <!-- gnb-menu -->
+              <div class="gnb-menu">
+                <div class="menu-wrap">
+                  <ul>
+                    <li><a href="#mGnb-anchor1" class="gnb-main-trigger">MyGOV</a></li>
+                  </ul>
+                </div>
+                <div class="submenu-wrap">
+                  <div class="gnb-sub-list" id="mGnb-anchor1">
+                    <h2 class="sub-title">MyGOV</h2>
+                    <ul>
+                      <li><a href="#" class="gnb-sub-trigger">MyGOV 홈</a></li>
+                      <li>
+                        <a href="#" class="gnb-sub-trigger has-depth3">보조금24란</a>
+                        <div class="depth3-wrap">
+                          <ul>
+                            <li><a href="#" class="depth3-trigger">이용 안내</a></li>
+                            <li><a href="#" class="depth3-trigger">자주묻는 질문</a></li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- //gnb-menu -->
+              <!-- gnb-bottom -->
+              <!-- <div class="gnb-bottom">
+          <a href="#" class="krds-btn medium text">인증 센터</a>
+          <a href="#" class="krds-btn medium text" target="_blank" title="새 창 열기"> 어린이 정부포털 <i class="svg-icon ico-go"></i> </a>
+        </div> -->
+              <!-- //gnb-bottom -->
+            </div>
+            <!-- //gnb-body -->
+
+            <!-- gnb-close -->
+            <button type="button" class="krds-btn medium icon" id="close-nav">
+              <span class="sr-only">전체메뉴 닫기</span>
+              <i class="svg-icon ico-popup-close"></i>
+            </button>
+            <!-- //gnb-close -->
+          </div>
+          <!-- //gnb-wrap-inner -->
+        </div>
+      </nav>
+
+      <!-- //메인메뉴 : 모바일 -->
+    </header>
+    <!-- //헤더 영역 -->
+
+    <!-- modal 글자 / 화면 설정 -->
+    <section id="modal_adjust_display" class="krds-modal fade" aria-labelledby="tit_modal_adjust_display">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- modal title -->
+          <div class="modal-header">
+            <h2 id="tit_modal_adjust_display" class="modal-title">
+              글자&middot;화면 표시 설정
+            </h2>
+          </div>
+          <!-- //modal title -->
+          <!-- modal contents -->
+          <div class="modal-conts">
+            <div class="conts-area">
+
+              <!-- adjust_display -->
+              <div class="adjust_display">
+                <!-- 글자 / 화면 표시 설정 -->
+                <div class="fieldset adjust_scale">
+                  <div class="form-group scale-options">
+                    <h3>글자&middot;화면 표시 설정</h3>
+                    <div class="form-conts">
+                      <div class="krds-check-area chk-column">
+                        <div class="krds-form-check">
+                          <input type="radio" name="scale_level" id="scale_level_small" value="small">
+                          <label for="scale_level_small">작게</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="scale_level" id="scale_level_medium" value="medium" checked>
+                          <label for="scale_level_medium">보통</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="scale_level" id="scale_level_large" value="large">
+                          <label for="scale_level_large">조금 크게</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="scale_level" id="scale_level_xlarge" value="xlarge">
+                          <label for="scale_level_xlarge">크게</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="scale_level" id="scale_level_xxlarge" value="xxlarge">
+                          <label for="scale_level_xxlarge">가장 크게</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 화면 표시 모드 -->
+                <div class="fieldset">
+                  <div class="form-group view-mode-options">
+                    <h3>화면 표시 모드</h3>
+                    <div class="form-conts">
+                      <div class="krds-check-area chk-column">
+                        <div class="krds-form-check view-mode-light">
+                          <input type="radio" name="view_mode" id="view_mode_light" value="light" checked>
+                          <label for="view_mode_light">기본 (밝은 배경)</label>
+                        </div>
+                        <div class="krds-form-check view-mode-dark">
+                          <input type="radio" name="view_mode" id="view_mode_dark" value="high-contrast">
+                          <label for="view_mode_dark">선명하게 (어두운 배경)</label>
+                        </div>
+                        <div class="krds-form-check view-mode-default">
+                          <input type="radio" name="view_mode" id="view_mode_default" value="theme">
+                          <label for="view_mode_default">시스템 설정</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //adjust_display -->
+
+            </div>
+          </div>
+          <!-- //modal contents -->
+          <!-- modal btn -->
+          <div class="modal-btn btn-wrap">
+            <button type="button" class="krds-btn medium tertiary close-modal" id="reset_display">초기화</button>
+            <button type="button" class="krds-btn medium primary close-modal">닫기</button>
+          </div>
+          <!-- //modal btn -->
+          <!-- close button -->
+          <button type="button" class="krds-btn medium icon btn-close close-modal">
+            <span class="sr-only">닫기</span>
+            <i class="svg-icon ico-popup-close"></i>
+          </button>
+          <!-- //close button -->
+        </div>
+      </div>
+      <div class="modal-back"></div>
+    </section>
+    <!-- //modal 글자 / 화면 설정 -->
+
+    <!-- 컨테이너 영역 -->
+    <div id="container" class="krds-in-page-navigation-type">
+      <!-- 컨텐츠 영역 -->
+      <div class="inner in-between">
+        <!-- 사이드 메뉴 -->
+        <nav class="krds-side-navigation">
+          <h2 class="lnb-tit"></h2>
+          <!-- lnb-list -->
+          <ul class="lnb-list">
+            <li class="lnb-item">
+              <button type="button" class="lnb-btn lnb-toggle"></button>
+              <!-- lnb-submenu -->
+              <div class="lnb-submenu">
+                <ul>
+                  <li class="lnb-subitem">
+                    <button type="button" class="lnb-btn lnb-toggle-popup"></button>
+                    <!-- lnb-submenu-lv2 -->
+                    <div class="lnb-submenu-lv2">
+                      <button type="button" class="lnb-btn-tit"></button>
+                      <ul>
+                        <li><a href="#" class="lnb-btn"></a></li>
+                      </ul>
+                    </div>
+                    <!-- //lnb-submenu-lv2 -->
+                  </li>
+                  <li class="lnb-subitem"><a href="#;" class="lnb-btn lnb-link"></a></li>
+                </ul>
+              </div>
+              <!-- //lnb-submenu -->
+            </li>
+          </ul>
+          <!-- //lnb-list -->
+        </nav>
+        <!-- //사이드 메뉴 -->
+
+        <div class="contents">
+          <!-- breadcrumb -->
+          <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+            <ol class="breadcrumb">
+            </ol>
+          </nav>
+          <!-- breadcrumb -->
+
+          <!-- page-title -->
+          <div class="page-title-wrap">
+            <h1 class="h-tit">page title</h1>
+
+            <div class="g-info-box">
+
+              <p class="g-desc">레이아웃(Layout)은 정보 구조와 시각적 흐름을 체계적으로 구성하여 사용자가 콘텐츠를 쉽게 이해할 수 있도록 한다. 레이아웃 가이드는 그리드, 브레이크포인트, 간격 설정을 통해 일관된 사용자 경험을 제공하며, 시각적 일관성과 정보 전달 효과를 높인다.</p>
+
+            </div>
+
+          </div>
+          <!-- //page-title -->
+
+          <div class="conts-area">
+            <!-- quick link -->
+            <div class="krds-in-page-navigation-area">
+              <div class="in-page-navigation-header">
+                <p class="quick-caption">이 페이지의 구성</p>
+                <p class="quick-title"></p>
+              </div>
+              <nav class="in-page-navigation-list">
+                <ul>
+                  <li><a href="#sample"></a></li>
+                </ul>
+              </nav>
+            </div>
+            <!-- //quick link -->
+
+            <!-- scroll-check -->
+            <div class="g-description-area scroll-check">
+              <!-- 그리드 요소 -->
+              <div class="g-conts-area section-link">
+                <h3 class="sec-tit">그리드 요소</h3>
+                <div class="g-conts-area">
+                  <div class="g-desc-area">
+                    <p class="g-desc">그리드 시스템은 UI에서 요소의 배치와 정렬을 지원하여 시각적 일관성과 질서를 유지하고, 균형 잡힌 레이아웃을 구현한다. 주요 그리드 구성 요소로는 칼럼(column), 마진(margin), 가터(gutter)가 있으며, 이를 통해 화면 내 시각적 일관성을 강화하고 다양한 디바이스에서
+                      최적의 사용자 경험을 제공한다.</p>
+                    <div class="g-desc-body">
+                      <div class="g-column">
+                        <div class="g-column-item row">
+                          <div class="g-img-wrap">
+                            <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_grid_01.png" alt="Screen margin 예시" /></div>
+                          </div>
+                          <div class="g-column-txt">
+                            <p class="con-tit sm mb">Screen margin</p>
+                            <p>화면의 양쪽 가장자리의 사이의 공간</p>
+                          </div>
+                        </div>
+                        <div class="g-column-item row">
+                          <div class="g-img-wrap">
+                            <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_grid_02.png" alt="Column 예시" /></div>
+                          </div>
+                          <div class="g-column-txt">
+                            <p class="con-tit sm mb">Column</p>
+                            <p>콘텐츠 영역의 수직으로 분할한 영역</p>
+                          </div>
+                        </div>
+                        <div class="g-column-item row">
+                          <div class="g-img-wrap">
+                            <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_grid_03.png" alt="Gutter 예시" /></div>
+                          </div>
+                          <div class="g-column-txt">
+                            <p class="con-tit sm mb">Gutter</p>
+                            <p>컬럼 사이의 간격</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 스크린 마진 -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">스크린 마진</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">스크린 마진(screen margin)은 화면의 양쪽 끝에 여백을 제공해, 콘텐츠가 화면 가장자리에 너무 가까워지지 않도록 한다. 이는 사용자에게 안정감과 일관성을 제공하며, 특히 터치 기반의 모바일 환경에서 가장자리 근처에 위치한 요소들이 오작동하지 않도록 한다.</p>
+                    <ul class="krds-info-list decimal">
+                      <li>브레이크포인트별 최소 스크린 마진을 준수하여, 화면 크기에 맞는 적절한 마진을 유지한다.</li>
+                      <li>모바일 환경에서 가장자리 요소 터치 오류 방지를 위해 최소한의 마진을 필수로 설정한다.
+                        <ul class="krds-info-list dash">
+                          <li>large: 최소 24px</li>
+                          <li>medium: 최소 24px</li>
+                          <li>small: 최소 16px</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_grid_04.png" alt="스크린 마진 예시" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //스크린 마진 -->
+
+                <!-- 칼럼 -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">칼럼</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">칼럼(column)은 UI 내 요소를 수직으로 정렬할 수 있는 분할 영역으로, 콘텐츠를 체계적이고 일관되게 배치할 수 있게 돕는다. 칼럼 수는 화면 크기에 맞춰 유동적으로 변경되며, 고정값 대신 백분율로 설정해 다양한 화면 크기에서 레이아웃이 유연하게 반응한다.</p>
+                    <ul class="krds-info-list decimal">
+                      <li>동일 화면에서 칼럼 수를 혼용하지 않도록 하여, 시각적으로 일관된 레이아웃을 유지한다.
+                        <ul class="krds-info-list dash">
+                          <li>large: 12-16개</li>
+                          <li>medium: 8-12개</li>
+                          <li>small: 4-6개</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_grid_05.png" alt="칼럼 N개의 컨테이너 너비는 전체 영역의 1/N, 컨테이너 개수에 관계없는 너비 예시" /></div>
+                      </div>
+                    </div>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_grid_06.png" alt="칼럼 12 Column, 8 Column, 4 Column 예시" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //칼럼 -->
+
+                <!-- 가터 -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">가터</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">가터(gutter)는 칼럼 사이의 간격을 의미하며, 요소 사이의 여백을 제공하여 시각적 혼잡을 줄이고 사용자가 콘텐츠에 집중할 수 있도록 한다.</p>
+                    <ul class="krds-info-list decimal">
+                      <li>가터 크기는 칼럼 너비의 절반 이하로 설정해 과도하게 넓거나 좁아지지 않도록 한다.
+                      </li>
+                      <li>가터 간격은 요소 간 구분을 도와 시각적 여유와 정돈된 레이아웃을 유지한다.
+                        <ul class="krds-info-list dash">
+                          <li>large: 최소 16px, 최적 24px</li>
+                          <li>medium: 최소 16px, 최적 24px</li>
+                          <li>small: 최소 16px, 최적 16px</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_grid_07.png" alt="가터 예시" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--// 가터 -->
+              </div>
+              <!-- //그리드 요소 -->
+
+              <!-- 브레이크포인트 -->
+              <div class="g-conts-area section-link">
+                <h3 class="sec-tit">브레이크포인트</h3>
+                <div class="g-conts-area">
+                  <div class="g-desc-area">
+                    <p class="g-desc">브레이크포인트(breakpoint)는 화면 크기에 따라 레이아웃이 변경되는 지점으로, 인터페이스가 다양한 화면 크기에 맞춰 자연스럽게 적응할 수 있게 한다.</p>
+                    <p class="g-desc">브레이크 포인트의 단계는 최소 3단계에서 6단계로 설정하여 사용한다. 브레이크 포인트 단계가 적을수록 관리와 개발이 용이하지만 세분화가 어려울 수 있고, 단계가 많아질수록 디자인 세분화가 가능하지만 복잡성은 증가한다.</p>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_breakpoint_01.png" alt="브레이크포인트 예시" /></div>
+                      </div>
+                    </div>
+                    <div class="g-desc-body">
+                      <div class="krds-table-wrap">
+                        <table class="tbl col data style">
+                          <caption>
+                            브레이크포인트에 대한 표로 브레이크포인트, 뷰포트, 칼럼 수 (적정-최대), 가터 너비 (최소-적정), 최소 스크린 마진, 대한 내용으로 구성되어 있으며
+                            브레이크포인트는 xsmall, small, medium, large, xlarge, xxlarge 구성되어있다.
+                          </caption>
+                          <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">브레이크포인트</th>
+                              <th scope="col">뷰포트</th>
+                              <th scope="col">칼럼 수 (적정-최대)</th>
+                              <th scope="col">가터 너비 (최소-적정)</th>
+                              <th scope="col">최소 스크린 마진</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="bg-gray">
+                              <th scope="row">xsmall</th>
+                              <td>-359px</td>
+                              <td>4-6</td>
+                              <td>16-16</td>
+                              <td>16px</td>
+                            </tr>
+                            <tr class="bg-light">
+                              <th scope="row">small</th>
+                              <td>360px-</td>
+                              <td>4-6</td>
+                              <td>16-16</td>
+                              <td>16px</td>
+                            </tr>
+                            <tr class="bg-gray">
+                              <th scope="row">medium</th>
+                              <td>768px-</td>
+                              <td>8-12</td>
+                              <td>16-24</td>
+                              <td>24px</td>
+                            </tr>
+                            <tr class="bg-light">
+                              <th scope="row">large</th>
+                              <td>1024px-</td>
+                              <td>12-16</td>
+                              <td>16-24</td>
+                              <td>24px</td>
+                            </tr>
+                            <tr class="bg-gray">
+                              <th scope="row">xlarge</th>
+                              <td>1280px-</td>
+                              <td>12-16</td>
+                              <td>16-24</td>
+                              <td>24px</td>
+                            </tr>
+                            <tr class="bg-light">
+                              <th scope="row">xxlarge</th>
+                              <td>1440px-</td>
+                              <td>12-16</td>
+                              <td>16-24</td>
+                              <td>24px</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 표준형 스타일 -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">표준형 스타일</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">고정된 콘텐츠 영역을 사용하는 표준형 스타일은 small부터 xlarge까지 총 4단계의 브레이크 포인트를 적용한다.</p>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_breakpoint_02.png" alt="표준형 스타일 예시" /></div>
+                      </div>
+                    </div>
+                    <div class="g-desc-body">
+                      <div class="krds-table-wrap">
+                        <table class="tbl col data style">
+                          <caption>
+                            표준형 스타일에 대한 표로 name, Viewport, 칼럼 수 (적정-최대), 가터 너비 (최소-적정), 최소 스크린 마진, 대한 내용으로 구성되어 있으며
+                            name은 small, medium, large, xlarge 구성되어있다.
+                          </caption>
+                          <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">name</th>
+                              <th scope="col">Viewport</th>
+                              <th scope="col">칼럼 수 (적정-최대)</th>
+                              <th scope="col">가터 너비 (최소-적정)</th>
+                              <th scope="col">최소 스크린 마진</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="bg-gray">
+                              <th scope="row">small</th>
+                              <td>360px-</td>
+                              <td>4</td>
+                              <td>16</td>
+                              <td>16px</td>
+                            </tr>
+                            <tr class="bg-light">
+                              <th scope="row">medium</th>
+                              <td>768px-</td>
+                              <td>8</td>
+                              <td>16</td>
+                              <td>24px</td>
+                            </tr>
+                            <tr class="bg-gray">
+                              <th scope="row">large</th>
+                              <td>1024px-</td>
+                              <td>12</td>
+                              <td>24</td>
+                              <td>24px</td>
+                            </tr>
+                            <tr class="bg-light">
+                              <th scope="row">xlarge</th>
+                              <td>1280px-</td>
+                              <td>12</td>
+                              <td>24</td>
+                              <td>24px</td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="g-desc-body">
+                      <div class="g-alert notice">
+                        <p class="desc">표준형 스타일은 xsmall의 디바이스는 최적화에 포함되지 않는다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //표준형 스타일 -->
+
+                <!-- 확장형 스타일 -->
+                <div class="g-conts-area sp-sm">
+                  <h4 class="con-tit">확장형 스타일</h4>
+                  <p class="g-desc">자유로운 콘텐츠 확장이 필요한 경우 3~6단계의 브레이크 포인트를 적용하여 다양한 화면에 유연하게 대응한다. 단, 브레이크포인트의 뷰포트와 칼럼 수와 가터, 최소 스크린 마진 값을 지켜서 사용한다.</p>
+                </div>
+                <!-- //확장형 스타일 -->
+              </div>
+              <!-- //브레이크포인트 -->
+
+              <!-- 콘텐츠 영역 -->
+              <div class="g-conts-area section-link">
+                <h3 class="sec-tit">콘텐츠 영역</h3>
+                <div class="g-conts-area">
+                  <p class="g-desc">콘텐츠 영역(contents-area)은 콘텐츠가 실제로 배치되는 공간으로, 고정형과 가변형으로 구분된다. 고정형은 기준 디바이스 사이즈 이상에서 일정한 폭을 유지하며, 가변형은 화면 크기에 따라 유동적으로 변화한다.</p>
+                </div>
+
+                <!--제한된 콘텐츠 영역 (고정형)  -->
+                <div class="g-conts-area sp-sm">
+                  <h4 class="con-tit">제한된 콘텐츠 영역 (고정형)</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">일정 해상도 이상에서 폭을 고정해 가독성과 안정감을 유지한다.</p>
+                    <p class="g-desc">표준형 스타일은 제한된 콘텐츠 영역을 사용하며 최대 1200px의 콘텐츠 영역을 사용해 가독성을 높인다.</p>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_content_01.png" alt="제한된 콘텐츠 영역 (고정형) 예시" /></div>
+                      </div>
+                    </div>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_content_02.png" alt="제한된 콘텐츠 영역 (고정형) 예시 이미지2" /></div>
+                      </div>
+                    </div>
+                    <div class="g-desc-body">
+                      <div class="g-alert notice">
+                        <p class="tit">표준형 스타일의 경우</p>
+                        <div class="desc">
+                          <ul class="krds-info-list decimal">
+                            <li>스크린 마진(24px) + 콘텐츠 너비(1200px) &gt; 디바이스 1248px: 콘텐츠 영역 유지</li>
+                            <li>스크린 마진(24px) + 콘텐츠 너비(1200px) &lt; 디바이스 1248px: 콘텐츠 영역 축소</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /제한된 콘텐츠 영역 (고정형)  -->
+
+                <!--풀 반응형 그리드/ 유연한 콘텐츠 영역 (가변형) -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">풀 반응형 그리드/ 유연한 콘텐츠 영역 (가변형)</h4>
+                  <div class="g-conts-area">
+                    <p class="g-desc">화면 크기에 따라 유동적으로 변화하여 다양한 기기에서 최적의 레이아웃을 제공한다. 큰 화면에서 콘텐츠 영역이 지나치게 넓어지지 않도록 가독성과 정보 전달력을 고려하여 레이아웃을 조정한다. </p>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_content_03.png" alt="풀 반응형 그리드/ 유연한 콘텐츠 영역 (가변형) 예시" /></div>
+                      </div>
+                    </div>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_content_04.png" alt="풀 반응형 그리드/ 유연한 콘텐츠 영역 (가변형) 예시 이미지2" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /풀 반응형 그리드/ 유연한 콘텐츠 영역 (가변형)  -->
+              </div>
+              <!-- //콘텐츠 영역  -->
+
+              <!-- 서브 페이지 레이아웃 -->
+              <div class="g-conts-area section-link">
+                <h3 class="sec-tit">서브 페이지 레이아웃</h3>
+                <div class="g-conts-area structure">
+                  <div class="g-desc-area">
+                    <p class="g-desc">서브 페이지 레이아웃(sub page layout)은 브레이크포인트 large 이상(1024px 이상) 디바이스에서 정보 구조에 따라 변형하여 사용한다. </p>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_subpage_01.png" alt="서브 페이지 레이아웃 예시" /></div>
+                      </div>
+                    </div>
+                    <div class="g-desc-body">
+                      <ol class="krds-info-list ordered">
+                        <li><span class="num">1.</span><strong>Header</strong>사용자가 웹사이트에 접속하자마자 마주하게 되는 화면의 최상단 영역</li>
+                        <li><span class="num">2.</span><strong>Left menu</strong>서브 화면 내에서의 이동을 위해 사용하는 메뉴<strong class="g-ico-select">선택사항</strong></li>
+                        <li><span class="num">3.</span><strong>Main contents</strong>사용자가 본문의 구조를 훑어보고 원하는 콘텐츠로 빠르게 이동할 수 있도록 하는 탐색 수단</li>
+                        <li><span class="num">4.</span><strong>Right menu</strong>사용자가 본문의 구조를 훑어보고 원하는 콘텐츠로 빠르게 이동할 수 있도록 하는 탐색 수단<strong class="g-ico-select">선택사항</strong></li>
+                        <li><span class="num">5.</span><strong>Footer</strong>화면을 구성하는 가장 마지막 요소로 헤더와 본문에서 원하는 정보를 찾지 못하였거나 사이트 구조 탐색 중에 길을 잃은 사용자들이 대면하게 되는 정보</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 왼쪽 메뉴를 사용하는 경우  -->
+                <div class="g-conts-area sp-sm">
+                  <h4 class="con-tit">왼쪽 메뉴를 사용하는 경우</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">왼쪽 메뉴는 주로 사이드 메뉴 영역으로 사용하며, 깊은 계층 구조의 탐색에 적합하여 IA 구성이 복잡한 화면에 활용된다. </p>
+                    <p class="g-desc">표준형 스타일은 사이드 메뉴를 포함한 최대 콘텐츠 너비를 1200px으로 사용한다.</p>
+                    <a href="./../component/component_03_04.html" class="krds-btn medium link basic"><span class="underline">사이드 메뉴</span> <i class="svg-icon ico-angle right"></i></a>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_subpage_02.png" alt="왼쪽 메뉴를 사용하는 경우 예시" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //왼쪽 메뉴를 사용하는 경우  -->
+
+                <!-- 오른쪽 메뉴를 사용하는 경우  -->
+                <div class="g-conts-area sp-sm">
+                  <h4 class="con-tit">오른쪽 메뉴를 사용하는 경우</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">오른쪽 메뉴는 콘텐츠 내 탐색, 도움 패널이나 빠른 메뉴 등 부가적 정보 제공에 사용된다. </p>
+                    <p class="g-desc">표준형 스타일의 콘텐츠 내 탐색은 콘텐츠 영역 밖에서 플로팅 되며, 도움 패널은 우측에서 펼쳐져 나오는 형태로 사용한다.</p>
+                    <a href="./../component/component_03_05.html" class="krds-btn medium link basic"><span class="underline">콘텐츠 내 탐색</span> <i class="svg-icon ico-angle right"></i></a>
+                    <a href="./../component/component_08_01.html" class="krds-btn medium link basic"><span class="underline">도움 패널</span> <i class="svg-icon ico-angle right"></i></a>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_subpage_03.png" alt="오른쪽 메뉴를 사용하는 경우 예시" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //오른쪽 메뉴를 사용하는 경우  -->
+
+                <!-- 양쪽 메뉴를 사용하는 경우 -->
+                <div class="g-conts-area sp-sm">
+                  <h4 class="con-tit">양쪽 메뉴를 사용하는 경우</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">왼쪽 메뉴(예: 사이드 메뉴) 와 오른쪽 메뉴(예: 콘텐츠 내 탐색)를 함께 사용할 경우로 큰 화면에서는 문제없으나, 작은 화면에서 사용 시 콘텐츠 가독성을 위해 메뉴 배치를 조정한다.</p>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_subpage_04.png" alt="양쪽 메뉴를 사용하는 경우 예시" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--// 양쪽 메뉴를 사용하는 경우 -->
+              </div>
+              <!-- //서브 페이지 레이아웃  -->
+
+              <!-- 간격 -->
+              <div class="g-conts-area section-link">
+                <h3 class="sec-tit">간격</h3>
+                <div class="g-conts-area">
+                  <div class="g-desc-area">
+                    <p class="g-desc">간격(spacing)은 UI 디자인에서 요소와 요소 간의 공간을 의미하며, 사용자에게 정보를 쉽게 탐색하고 직관적으로 이해할 수 있는 경험을 제공한다. 모든 간격은 8-point grid system을 기준으로 설정하여 일관성을 유지하며, 페이지 레이아웃에서 시각적 흐름이 자연스럽게
+                      이어지도록 한다.</p>
+                    <p class="g-desc">간격에는 요소 사이의 갭(Gap), 요소 내부의 패딩(Padding), 그리고 다양한 화면 크기에 대응하는 반응형 간격이 포함된다. 간격의 요소는 primitive token인 number에서 사용된다.</p>
+                    <a href="./../style/style_07.html" class="krds-btn medium link basic"><span class="underline">디자인 토큰 확인하기</span> <i class="svg-icon ico-angle right"></i></a>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_gap_01.png" alt="간격 예시" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="g-conts-area g-column stretch sp-sm">
+                  <!-- 갭 -->
+                  <div class="g-column-item">
+                    <h4 class="con-tit">갭</h4>
+                    <div class="g-desc-area">
+                      <p class="g-desc">갭(gap)은 컴포넌트 사이의 간격을 의미한다. 예를 들어 카드, 리스트 항목, 그리드 레이아웃과 같은 컴포넌트 간의 여백을 조정하여 정보 밀도와 시각적 구성을 제어할 수 있다.</p>
+                      <div class="g-desc-body">
+                        <div class="g-img-wrap">
+                          <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_gap_02.png" alt="갭 예시" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //갭 -->
+                  <!-- 패딩 -->
+                  <div class="g-column-item">
+                    <h4 class="con-tit">패딩</h4>
+                    <div class="g-desc-area">
+                      <p class="g-desc">패딩(padding)은 컴포넌트 내부의 여백을 의미하며, 주로 요소의 내용과 경계선 사이의 공간을 조정하는 역할을 한다. 이를 통해 컴포넌트의 가독성을 높이고, 사용자에게 명확한 콘텐츠 구분을 제공한다.</p>
+                      <div class="g-desc-body">
+                        <div class="g-img-wrap">
+                          <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_gap_03.png" alt="패딩 예시" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //패딩 -->
+                </div>
+
+                <!-- 반응형 간격 설정 -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">반응형 간격 설정</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">디바이스 사이즈에 따라 적절한 간격을 설정하여 사용한다. 화면 사이즈가 큰 곳에서는 여유있는 간격이 필요하지만 디바이스 사이즈가 작아질수록 간격을 줄여야 화면 공간을 효율적으로 사용할 수 있다.</p>
+                    <p class="g-desc">표준형 스타일은 PC와 모바일 두 가지 주요 디바이스 유형에 대한 간격을 설정하며, 레이아웃 간격이나, 텍스트 사이의 간격, 카드 내부 패딩값 등을 제공한다.</p>
+                    <div class="g-desc-body">
+                      <!-- table list -->
+                      <div class="krds-table-wrap">
+                        <table class="tbl col data">
+                          <caption>
+                            반응형 간격 설정에 대한 표로 모드, 범위, 뷰포트, 기준 사이즈 (콘텐츠 영역), 사용에 대한 내용으로 구성되어 있으며
+                            모드는 Mobile,PC 으로 구성되어있다.
+                          </caption>
+                          <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">모드</th>
+                              <th scope="col">범위</th>
+                              <th scope="col">뷰포트</th>
+                              <th scope="col">기준 사이즈 (콘텐츠 영역)</th>
+                              <th scope="col">사용</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row" rowspan="2">Mobile</th>
+                              <td>small</td>
+                              <td>360px 이상</td>
+                              <td rowspan="2">348px</td>
+                              <td rowspan="2">태블릿을 포함한 소형 디바이스에 지원</td>
+                            </tr>
+                            <tr>
+                              <td>medium</td>
+                              <td>768px 이상</td>
+                            </tr>
+                            <tr>
+                              <th scope="row" rowspan="2">PC</th>
+                              <td>large</td>
+                              <td>1024px 이상</td>
+                              <td rowspan="2">1200px</td>
+                              <td rowspan="2">일반적으로 데스크탑 및 대형 화면을 지원</td>
+                            </tr>
+                            <tr>
+                              <td>xlarge</td>
+                              <td>1280px 이상</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- //table list -->
+                    </div>
+                  </div>
+                </div>
+                <!-- //반응형 간격 설정 -->
+
+              </div>
+              <!-- //간격 -->
+
+              <!-- 간격 적용 -->
+              <div class="g-conts-area section-link">
+                <h3 class="sec-tit">간격 적용</h3>
+                <div class="g-conts-area">
+                  <div class="g-desc-area">
+                    <p class="g-desc">간격은 큰 틀의 레이아웃 간격, 타이포 계층 간격, 콘텐츠의 간격, 컴포넌트 내부 요소로는 패딩, 높이 값 등 전반적인 요소에 사용된다.</p>
+                    <a href="./../style/style_07.html" class="krds-btn medium link basic"><span class="underline">디자인 토큰 확인하기</span> <i class="svg-icon ico-angle right"></i></a>
+                    <div class="g-desc-body">
+                      <div class="g-column">
+                        <div class="g-column-item row">
+                          <div class="g-img-wrap">
+                            <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_01.png" alt="Layout 예시"></div>
+                          </div>
+                          <div class="g-column-txt">
+                            <p class="con-tit sm mb">Layout</p>
+                            <p>기본 구조에서 사용되는 사이 간격</p>
+                          </div>
+                        </div>
+                        <div class="g-column-item row">
+                          <div class="g-img-wrap">
+                            <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_02.png" alt="Contents 예시"></div>
+                          </div>
+                          <div class="g-column-txt">
+                            <p class="con-tit sm mb">Contents</p>
+                            <p>콘텐츠의 계층 구조를 위한 간격</p>
+                          </div>
+                        </div>
+                        <div class="g-column-item row">
+                          <div class="g-img-wrap">
+                            <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_03.png" alt="Padding 예시"></div>
+                          </div>
+                          <div class="g-column-txt">
+                            <p class="con-tit sm mb">Padding</p>
+                            <p>컴포넌트 내부에 사용되는 패딩값</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 레이아웃 -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">레이아웃</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">일관성을 유지하기 위해 큰 화면의 레이아웃 요소의 간격을 정의한다. 기본 구조는 header-body-footer의 영역으로 나누어지며, 필요에 따라 영역을 분리하여 사용한다.</p>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_04.png" alt="레이아웃 예시"></div>
+                      </div>
+                    </div>
+                    <div class="g-desc-body">
+                      <div class="krds-table-wrap">
+                        <table class="tbl col data style">
+                          <caption>
+                            레이아웃트에 대한 표로 브레이크포인트, 뷰포트, 칼럼 수 (적정-최대), 가터 너비 (최소-적정), 최소 스크린 마진, 대한 내용으로 구성되어 있으며
+                            브레이크포인트는 xsmall, xsmall, medium, large, xlarge, xxlarge 구성되어있다.
+                          </caption>
+                          <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">브레이크포인트</th>
+                              <th scope="col">뷰포트</th>
+                              <th scope="col">칼럼 수 (적정-최대)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="bg-gray">
+                              <td>1. Header-breadcrumb</td>
+                              <td>24px (-number10)</td>
+                              <td>24px (-number10)</td>
+                            </tr>
+                            <tr class="bg-light">
+                              <td>2. Left-contents</td>
+                              <td>64px (-number18)</td>
+                              <td>-</td>
+                            </tr>
+                            <tr class="bg-gray">
+                              <td>3. Contents-right</td>
+                              <td>40px (-number14)</td>
+                              <td>-</td>
+                            </tr>
+                            <tr class="bg-light">
+                              <td>4. Contents-footer</td>
+                              <td>64px (-number18)</td>
+                              <td>40px (-number14)</td>
+                            </tr>
+                            <tr class="bg-gray">
+                              <td>5. Breadcrumb-contents(h1)</td>
+                              <td>40px (-number14)</td>
+                              <td>32px (-number11)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //레이아웃 -->
+
+                <!-- 콘텐츠 계층 (텍스트 계층) -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">콘텐츠 계층 (텍스트 계층)</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">타이포그래피 계층 구조인 h1부터 h5까지의 콘텐츠 사이의 간격으로 계층 구조를 준수하여 사용한다.</p>
+                    <a href="./../style/style_03.html" class="krds-btn medium link basic"><span class="underline">타이포그래피 확인하기</span> <i class="svg-icon ico-angle right"></i></a>
+                    <div class="g-desc-body">
+                      <div class="g-img-wrap">
+                        <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_05.png" alt="콘텐츠 계층 (텍스트 계층) 예시" /></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //콘텐츠 계층 (텍스트 계층) -->
+
+                <!-- 컴포넌트 리스트 -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">컴포넌트 리스트</h4>
+                  <p class="g-desc">컴포넌트 사이의 간격과 리스트 간격을 정의한다.</p>
+                  <!-- 카드 리스트 -->
+                  <div class="g-conts-area sp-sm">
+                    <h5 class="con-tit sm">카드 리스트</h5>
+                    <div class="g-desc-area">
+                      <p class="g-desc">카드 세로형, 가로형, 모듈형 간격은 모두 gap-7(24px)을 사용한다. 대체로 세로형 카드 리스트의 간격은 gutter값으로 적용한다.</p>
+                      <div class="g-desc-body">
+                        <div class="g-column">
+                          <div class="g-column-item">
+                            <div class="g-img-wrap">
+                              <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_06.png" alt="카드 리스트 세로형 예시" /></div>
+                            </div>
+                          </div>
+                          <div class="g-column-item">
+                            <div class="g-img-wrap">
+                              <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_07.png" alt="카드 리스트 가로형 예시" /></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //카드 리스트 -->
+
+                  <!-- 인풋 -->
+                  <div class="g-conts-area sp-sm">
+                    <h5 class="con-tit sm">인풋</h5>
+                    <div class="g-desc-area">
+                      <p class="g-desc">인풋과 인풋, 카드, 셀렉트 등 가로형으로 조합할 경우의 사이 간격은 gap-5(16px) 토큰을 사용하고, 인풋과 인풋을 세로형으로 조합하는 경우는 인풋의 사이즈에 따라 gap-5~gap-7(16px~24px)의 토큰을 사용한다.</p>
+                      <div class="g-desc-body">
+                        <div class="g-column">
+                          <div class="g-column-item">
+                            <div class="g-img-wrap">
+                              <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_08.png" alt="인풋 가로형으로 조합 예시" /></div>
+                            </div>
+                          </div>
+                          <div class="g-column-item">
+                            <div class="g-img-wrap">
+                              <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_09.png" alt="인풋 세로형으로 조합 예시" /></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //인풋 -->
+
+                  <!-- 체크박스, 라디오버튼 -->
+                  <div class="g-conts-area sp-sm">
+                    <h5 class="con-tit sm">체크박스, 라디오버튼</h5>
+                    <div class="g-desc-area">
+                      <p class="g-desc">체크박스나 라디오 버튼을 리스트 형태로 사용 시 컴포넌트 사이즈에 따라 gap5-gap7(16px-24px)의 토큰을 사용한다. 또한 가로형을 사용해야 하는 경우 간격을 gap7(24px)이상의 토큰을 사용하여 충분한 간격을 유지한다.</p>
+                      <div class="g-desc-body">
+                        <div class="g-column">
+                          <div class="g-column-item">
+                            <div class="g-img-wrap">
+                              <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_10.png" alt="체크박스, 라디오버튼 리스트 형태 예시" /></div>
+                            </div>
+                          </div>
+                          <div class="g-column-item">
+                            <div class="g-img-wrap">
+                              <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_11.png" alt="체크박스, 라디오버튼 가로형 예시" /></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //체크박스, 라디오버튼 -->
+                </div>
+                <!-- //컴포넌트 리스트 -->
+
+                <!-- 컴포넌트 내 패딩 -->
+                <div class="g-conts-area">
+                  <h4 class="con-tit">컴포넌트 내 패딩</h4>
+                  <p class="g-desc">컴포넌트 내부의 패딩값을 정의한다. 기능과 크기에 맞는 패딩과 간격을 일관되게 사용하여 통일감과 가독성을 유지한다.</p>
+                  <!-- 카드 -->
+                  <div class="g-conts-area sp-sm">
+                    <h5 class="con-tit sm">카드</h5>
+                    <div class="g-desc-area">
+                      <p class="g-desc">카드, 모달, 인포박스, 알럿 등의 컨테이너는 일관된 레이아웃 유지를 위해 padding-card (padding8-10) 토큰을 사용한다. PC는 넉넉한 여백을, 모바일은 공간 제약을 반영하여 패딩 크기를 다르게 적용한다.</p>
+                      <div class="g-desc-body">
+                        <div class="g-column">
+                          <div class="g-column-item">
+                            <div class="g-img-wrap">
+                              <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_12.png" alt="카드 pc 예시" /></div>
+                            </div>
+                          </div>
+                          <div class="g-column-item">
+                            <div class="g-img-wrap">
+                              <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_13.png" alt="카드 mobile 예시" /></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //카드 -->
+
+                  <!-- 인풋 박스 -->
+                  <div class="g-conts-area sp-sm">
+                    <h5 class="con-tit sm">텍스트 입력 필드</h5>
+                    <div class="g-desc-area">
+                      <p class="g-desc">텍스트 입력 필드(Text input)는 레이블, 부가 설명, 입력 박스, 시스템 메시지 순으로 정렬되며, 각 요소 간의 간격인 gap-3(8px)과 입력 박스의 패딩값인 padding-6(16px)를 유지하여 사용한다.</p>
+                      <div class="g-desc-body">
+                        <div class="g-column">
+                          <div class="g-img-wrap">
+                            <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_apply_14.png" alt="인풋 박스 예시" /></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //인풋 박스 -->
+                </div>
+                <!-- //컴포넌트 내 패딩 -->
+              </div>
+              <!-- //간격 적용 -->
+
+              <!-- 사용 가이드 -->
+              <div class="g-conts-area section-link">
+                <h3 class="sec-tit">사용 가이드</h3>
+                <div class="g-conts-area sp-sm">
+                  <h4 class="con-tit">스크린 마진 최솟값 유지</h4>
+                  <div class="g-desc-area">
+                    <p class="g-desc">디바이스별 스크린 마진 최소값을 유지한다. 모바일에서 디바이스 끝부분에 여백이 없으면 터치가 어려울 수 있다.</p>
+                    <div class="g-desc-body">
+                      <div class="g-column">
+                        <div class="g-img-wrap caption-format success p-sm g-column-item">
+                          <p class="caption"><span class="svg-icon ico-success-fill pure"></span>모범 사례</p>
+                          <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_guide_1_good.png" alt="모범 사례 예시"></div>
+                        </div>
+                        <div class="g-img-wrap caption-format error p-sm g-column-item">
+                          <p class="caption"><span class="svg-icon ico-error-fill pure"></span>피해야 할 사례</p>
+                          <div class="g-img-zoom"><img src="../../../resources/img/guide/contents/style/layout_guide_2_good.png" alt="피해야 할 사례 예시"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--// 사용 가이드 -->
+
+              <!-- 자주 묻는 질문 -->
+              <div class="g-conts-area g-question section-link-mute -page-faq" style="display: none;">
+                <h3 class="sec-tit">자주 묻는 질문</h3>
+                <!-- accordion -->
+                <div class="krds-accordion" id="faq-list"></div>
+
+                <a href="../community/community_02.html" class="krds-btn medium text"><span class="sr-only">자주 묻는 질문</span>더보기<i class="svg-icon ico-angle right"></i></a>
+                <!-- //accordion -->
+                <script type="text/stache" id="faq-template">
+                  {{#items}}
+                    <div class="accordion-item">
+                      <div class="accordion-header">
+                        <button type="button" class="btn-accordion">
+                          <span class="category keyword">{{nttType}}</span>
+                          <span class="title"><strong>{{nttSj}}</strong></span>
+                        </button>
+                      </div>
+                      <div class="accordion-collapse collapse">
+                        <div class="accordion-body">{{{nttCn}}}</div>
+                      </div>
+                    </div>
+                  {{/items}}
+                </script>
+              </div>
+              <script type="module">
+                import PageFaqControl from '/resources/js/controls/page-faq-control.js';
+                new PageFaqControl('.-page-faq');
+              </script>
+              <!-- //자주 묻는 질문 -->
+
+              <!-- 정보 변경 내역 -->
+              <div class="g-conts-area section-link">
+                <h3 class="sec-tit">정보 변경 내역</h3>
+                <!-- table list -->
+                <div class="krds-table-wrap">
+                  <table class="tbl col data">
+                    <caption>
+                      정보 변경 내역 표로 변경일자, 변경 내용으로 구성되어있음
+                    </caption>
+                    <colgroup>
+                      <col style="width: 160px;" />
+                      <col />
+                      <col style="width: 260px;" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">변경일자</th>
+                        <th scope="col">변경 내용</th>
+                        <th scope="col">리소스</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="vt">
+                      <tr>
+                        <td>2025년 1월 15일</td>
+                        <td>
+                          <ul class="krds-info-list decimal">
+                            <li>최초 등록</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <div class="g-btn-area">
+                            <a href="https://www.figma.com/@krds" class="krds-btn small link text-nowrap" title="새 창 열기" target="_blank">
+                              <span class="underline">Figma 라이브러리 v1.0.0</span> <i class="svg-icon ico-go"></i>
+                            </a>
+                            <a href="https://github.com/KRDS-uiux/krds-uiux/releases/tag/1.0.1" class="krds-btn small link text-nowrap" title="새 창 열기" target="_blank">
+                              <span class="underline">HTML Component Kit v1.0.1</span> <i class="svg-icon ico-go"></i>
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+                </div>
+                <!-- //table list -->
+              </div>
+              <!-- //정보 변경 내역 -->
+
+              <!-- 컨텐츠 배너 영역 -->
+              <div class="g-banner-area">
+                <div class="g-banner-inner">
+                  <h3 class="tit">궁금한 점이나 의견이 있으십니까?</h3>
+                  <ul class="krds-info-list decimal">
+                    <li>소식&middot;소통의 <a href="/html/site/community/community_06.html" class="krds-btn medium link"><span class="underline">문의 및 건의</span></a>게시판을 이용하세요.</li>
+                    <li>문의하시기 전 <a href="/html/site/community/community_02.html" class="krds-btn medium link"><span class="underline">자주 묻는 질문</span></a> 을 통해 문제 해결방법을 확인하실 수 있습니다.</li>
+                  </ul>
+                </div>
+              </div>
+              <!--// 컨텐츠 배너 영역 -->
+            </div>
+            <!-- //scroll-check -->
+          </div>
+
+        </div>
+      </div>
+      <!-- //컨텐츠 영역 -->
+    </div>
+    <!-- //컨테이너 영역 -->
+
+    <!-- 푸터 영역 -->
+    <footer id="krds-footer">
+      <div class="footer-banner">
+        <div class="inner">
+          <strong>KRDS 구버전 웹사이트를 찾고 계시나요?</strong>
+          <div>
+            <a href="https://v04.krds.go.kr/" class="krds-btn medium link" title="새창열림" target="_blank">
+              <span class="underline">v04.krds.go.kr</span>
+              <i class="svg-icon ico-go"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- inner -->
+      <div class="inner">
+        <div class="f-logo">
+          <span class="sr-only">KRDS - Korea Design System</span>
+          <!-- <img src="../../../resources/img/guide/common/ico_logo_krds.svg" alt="KRDS"> -->
+        </div>
+        <div class="f-cnt">
+          <div class="f-info">
+            <ul class="info-cs">
+              <!-- <li><strong class="key-info">대표전화 <span>070-7830-4919</span> </strong></li> -->
+              <li><strong class="key-info">대표전화 <span>053-230-1923</span> </strong></li>
+              <li><strong class="key-info">대표이메일 <span><a href="mailto:krds@nia.or.kr">krds@nia.or.kr</a></span></strong></li>
+            </ul>
+          </div>
+
+          <div class="f-link">
+            <div class="link-go">
+              <a href="/html/site/community/community_06.html" class="krds-btn medium text">문의 및 건의 <i class="svg-icon ico-page-next"></i></a>
+              <a href="https://github.com/KRDS-uiux/krds-uiux" class="krds-btn medium text" target="_blank" title="새 창 열림">Git <i class="svg-icon ico-go"></i></a>
+              <a href="https://www.figma.com/@krds" class="krds-btn medium text" target="_blank" title="새 창 열림">Figma <i class="svg-icon ico-go"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="f-btm">
+          <div class="f-btm-text">
+            <div class="f-menu">
+              <a href="/html/site/utility/utility_01.html" class="krds-btn small text">KRDS 소개</a>
+              <a href="/html/site/utility/utility_05.html" class="krds-btn small text">이용 안내</a>
+              <a href="/html/site/utility/utility_06.html" class="krds-btn small text">저작권정책</a>
+            </div>
+            <p class="f-copy">© 2023 Ministry of the Interior and Safety. All rights reserved.</p>
+            <a href="https://www.wa.or.kr/board/list.asp?BoardID=0006" title="새창" target="_blank" class="f-mark"><img src="../../../resources/img/guide/common/web_accessibility_mark.png"
+                alt="(사)한국장애인단체총연합회한국웹접근성인증평가원웹접근성 우수사이트인증마크(WA인증마크)" width="68" height="48"></a>
+          </div>
+
+          <!-- identifier -->
+          <div class="krds-identifier">
+            <span class="logo">
+              <span class="sr-only">행정안전부</span>
+            </span>
+            <span class="ban-txt">이 누리집은 행정안전부 산하기관 누리집입니다.</span>
+          </div>
+          <!-- //identifier -->
+        </div>
+      </div>
+      <!-- //inner -->
+    </footer>
+    <!-- //푸터 영역 -->
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+.krds-tag-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--krds-gap-2);
+}
+
+.krds-btn-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--krds-gap-1);
+  padding: var(--krds-padding-2) var(--krds-padding-4);
+  border-radius: var(--krds-radius-medium1);
+  background-color: var(--krds-light-color-surface-gray-subtler);
+  color: var(--krds-light-color-text-basic);
+  font-size: var(--krds-pc-font-size-label-medium);
+  line-height: 1.2;
+}
+
+.krds-tag-wrap.large .krds-btn-tag {
+  padding: var(--krds-padding-3) var(--krds-padding-5);
+  font-size: var(--krds-pc-font-size-label-large);
+}
+
+.krds-tag-wrap.small .krds-btn-tag {
+  padding: var(--krds-padding-1) var(--krds-padding-3);
+  font-size: var(--krds-pc-font-size-label-small);
+}
+
+.krds-btn-tag .btn-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.krds-btn-tag .btn-delete::after {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: var(--krds-light-color-icon-gray);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E");
+  mask-size: contain;
+}
+
+.krds-btn-tag .btn-delete:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 1px;
+  border-radius: 2px;
+}

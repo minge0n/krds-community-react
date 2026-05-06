@@ -1,0 +1,45 @@
+.krds-check-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--krds-gap-5);
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.krds-check-area.chk-column {
+  flex-direction: column;
+}
+
+/* Radio specific styles */
+.krds-form-check input[type="radio"] {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  border: 1px solid var(--krds-light-color-border-gray-dark);
+  border-radius: 50%;
+  background-color: var(--krds-light-color-surface-white);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.krds-form-check input[type="radio"]:checked {
+  border-color: var(--krds-light-color-button-primary-fill);
+  border-width: 6px;
+}
+
+.krds-form-check input[type="radio"]:disabled {
+  background-color: var(--krds-light-color-surface-disabled);
+  border-color: var(--krds-light-color-border-disabled);
+  cursor: not-allowed;
+}
+
+.krds-form-check input[type="radio"]:disabled:checked {
+  border-color: var(--krds-light-color-element-disabled-dark);
+}
+
+.krds-form-check input[type="radio"]:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}

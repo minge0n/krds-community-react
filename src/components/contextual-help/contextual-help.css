@@ -1,0 +1,55 @@
+.krds-contextual-help-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: none;
+  background: none;
+  border-radius: var(--krds-radius-round);
+  color: var(--krds-light-color-icon-gray);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.krds-contextual-help-trigger:hover {
+  color: var(--krds-light-color-icon-primary);
+}
+
+.krds-contextual-help-trigger:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+
+.krds-contextual-help-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.krds-contextual-help-popup {
+  max-width: 28rem;
+  padding: var(--krds-padding-5);
+  background-color: var(--krds-light-color-surface-white);
+  border: 1px solid var(--krds-light-color-border-gray-light);
+  border-radius: var(--krds-radius-medium2);
+  box-shadow: 0 4px 12px var(--krds-light-color-alpha-shadow2);
+  z-index: 1000;
+}
+
+.krds-contextual-help-arrow {
+  fill: var(--krds-light-color-surface-white);
+  stroke: var(--krds-light-color-border-gray-light);
+}
+
+.krds-contextual-help-title {
+  margin: 0 0 var(--krds-gap-2);
+  font-size: var(--krds-pc-font-size-label-medium);
+  font-weight: 700;
+  color: var(--krds-light-color-text-basic);
+}
+
+.krds-contextual-help-content {
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-gray);
+  line-height: 1.6;
+}

@@ -1,0 +1,24 @@
+.textarea-wrap {
+  position: relative;
+}
+
+.textarea-wrap .krds-input {
+  height: auto;
+  min-height: 12rem;
+  padding: var(--krds-padding-5);
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.textarea-count {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0;
+  margin: var(--krds-gap-1) 0 0;
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-subtle);
+}
+
+.textarea-count .count-now {
+  color: var(--krds-light-color-text-basic);
+}

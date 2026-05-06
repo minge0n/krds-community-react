@@ -1,0 +1,5 @@
+/* Favicon is a non-visual component (renders link tags in head).
+   This file exists for consistency with the component structure. */
+.krds-favicon {
+  display: none;
+}

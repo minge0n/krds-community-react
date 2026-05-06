@@ -1,0 +1,94 @@
+.krds-language-switcher {
+  position: relative;
+  display: inline-flex;
+}
+
+.krds-language-switcher-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--krds-gap-2);
+  padding: var(--krds-padding-2) var(--krds-padding-3);
+  border: 1px solid var(--krds-light-color-border-gray);
+  border-radius: var(--krds-radius-medium1);
+  background-color: var(--krds-light-color-surface-white);
+  font-family: inherit;
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-basic);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.krds-language-switcher-trigger:hover {
+  border-color: var(--krds-light-color-border-gray-dark);
+}
+
+.krds-language-switcher-trigger:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+
+.krds-language-switcher-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: var(--krds-light-color-icon-gray);
+}
+
+.krds-language-switcher-label {
+  font-weight: 500;
+}
+
+.krds-language-switcher-chevron {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--krds-light-color-icon-gray);
+  transition: transform 0.2s ease;
+}
+
+.krds-language-switcher-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+.krds-language-switcher-menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: var(--krds-padding-2) 0;
+  background-color: var(--krds-light-color-surface-white);
+  border: 1px solid var(--krds-light-color-border-gray-light);
+  border-radius: var(--krds-radius-medium2);
+  box-shadow: 0 4px 12px var(--krds-light-color-alpha-shadow2);
+  z-index: 1000;
+}
+
+.krds-language-switcher-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--krds-padding-3) var(--krds-padding-4);
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-basic);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.krds-language-switcher-option:hover {
+  background-color: var(--krds-light-color-action-primary-hover);
+}
+
+.krds-language-switcher-option.selected {
+  color: var(--krds-light-color-text-primary);
+  font-weight: 700;
+}
+
+.krds-language-switcher-option:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: -2px;
+}
+
+.krds-language-switcher-check {
+  color: var(--krds-light-color-icon-primary);
+  font-size: 1.2rem;
+}

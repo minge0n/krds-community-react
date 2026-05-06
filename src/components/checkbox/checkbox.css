@@ -1,0 +1,85 @@
+.krds-form-check {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--krds-gap-2);
+}
+
+.krds-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  border: 1px solid var(--krds-light-color-border-gray-dark);
+  border-radius: var(--krds-radius-xsmall1);
+  background-color: var(--krds-light-color-surface-white);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.krds-checkbox[data-checked] {
+  background-color: var(--krds-light-color-button-primary-fill);
+  border-color: var(--krds-light-color-button-primary-fill);
+}
+
+.krds-checkbox[data-disabled] {
+  background-color: var(--krds-light-color-surface-disabled);
+  border-color: var(--krds-light-color-border-disabled);
+  cursor: not-allowed;
+}
+
+.krds-checkbox[data-checked][data-disabled] {
+  background-color: var(--krds-light-color-element-disabled-dark);
+  border-color: var(--krds-light-color-element-disabled-dark);
+}
+
+.krds-checkbox:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+
+.krds-checkbox-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.krds-checkbox-indicator::after {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #fff;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.krds-form-check label {
+  font-size: var(--krds-pc-font-size-body-medium);
+  color: var(--krds-light-color-text-basic);
+  cursor: pointer;
+  line-height: 2rem;
+}
+
+.krds-form-check:has([data-disabled]) label {
+  color: var(--krds-light-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.krds-form-check-cnt {
+  width: 100%;
+  padding-left: 2.8rem;
+}
+
+.krds-form-check-p {
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-subtle);
+  margin: 0;
+}

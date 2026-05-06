@@ -1,0 +1,51 @@
+.krds-resize {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--krds-light-color-border-gray);
+  border-radius: var(--krds-radius-medium1);
+  overflow: hidden;
+}
+
+.krds-resize-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--krds-padding-3) var(--krds-padding-4);
+  border: none;
+  background-color: var(--krds-light-color-surface-white);
+  color: var(--krds-light-color-text-basic);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.krds-resize-btn + .krds-resize-btn {
+  border-left: 1px solid var(--krds-light-color-border-gray);
+}
+
+.krds-resize-btn.small {
+  font-size: var(--krds-pc-font-size-label-small);
+}
+
+.krds-resize-btn.medium {
+  font-size: var(--krds-pc-font-size-label-medium);
+}
+
+.krds-resize-btn.large {
+  font-size: var(--krds-pc-font-size-label-large);
+}
+
+.krds-resize-btn.active {
+  background-color: var(--krds-light-color-button-primary-fill);
+  color: var(--krds-light-color-text-inverse-static);
+}
+
+.krds-resize-btn:hover:not(.active) {
+  background-color: var(--krds-light-color-surface-gray);
+}
+
+.krds-resize-btn:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: -2px;
+}

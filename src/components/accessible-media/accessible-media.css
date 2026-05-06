@@ -1,0 +1,16 @@
+.krds-accessible-media {
+  position: relative;
+  width: 100%;
+}
+
+.krds-accessible-media-player {
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--krds-radius-medium2);
+  background-color: var(--krds-light-color-surface-black);
+}
+
+.krds-accessible-media-player:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}

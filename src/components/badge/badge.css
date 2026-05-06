@@ -1,0 +1,134 @@
+.krds-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--krds-padding-1) var(--krds-padding-3);
+  border-radius: var(--krds-radius-max);
+  font-size: var(--krds-pc-font-size-label-xsmall);
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Outline variants */
+.krds-badge.outline-primary {
+  border: 1px solid var(--krds-color-light-primary-50);
+  color: var(--krds-color-light-primary-50);
+}
+.krds-badge.outline-secondary {
+  border: 1px solid var(--krds-color-light-secondary-50);
+  color: var(--krds-color-light-secondary-50);
+}
+.krds-badge.outline-gray {
+  border: 1px solid var(--krds-color-light-gray-50);
+  color: var(--krds-color-light-gray-50);
+}
+.krds-badge.outline-point {
+  border: 1px solid var(--krds-color-light-point-50);
+  color: var(--krds-color-light-point-50);
+}
+.krds-badge.outline-danger {
+  border: 1px solid var(--krds-color-light-danger-50);
+  color: var(--krds-color-light-danger-50);
+}
+.krds-badge.outline-warning {
+  border: 1px solid var(--krds-color-light-warning-50);
+  color: var(--krds-color-light-warning-50);
+}
+.krds-badge.outline-success {
+  border: 1px solid var(--krds-color-light-success-50);
+  color: var(--krds-color-light-success-50);
+}
+.krds-badge.outline-information {
+  border: 1px solid var(--krds-color-light-information-50);
+  color: var(--krds-color-light-information-50);
+}
+.krds-badge.outline-disabled {
+  border: 1px solid var(--krds-color-light-gray-30);
+  color: var(--krds-color-light-gray-40);
+}
+
+/* Background variants */
+.krds-badge.bg-primary {
+  background-color: var(--krds-color-light-primary-50);
+  color: #fff;
+}
+.krds-badge.bg-secondary {
+  background-color: var(--krds-color-light-secondary-50);
+  color: #fff;
+}
+.krds-badge.bg-gray {
+  background-color: var(--krds-color-light-gray-50);
+  color: #fff;
+}
+.krds-badge.bg-point {
+  background-color: var(--krds-color-light-point-50);
+  color: #fff;
+}
+.krds-badge.bg-danger {
+  background-color: var(--krds-color-light-danger-50);
+  color: #fff;
+}
+.krds-badge.bg-warning {
+  background-color: var(--krds-color-light-warning-30);
+  color: var(--krds-color-light-gray-90);
+}
+.krds-badge.bg-success {
+  background-color: var(--krds-color-light-success-50);
+  color: #fff;
+}
+.krds-badge.bg-information {
+  background-color: var(--krds-color-light-information-50);
+  color: #fff;
+}
+.krds-badge.bg-disabled {
+  background-color: var(--krds-color-light-gray-20);
+  color: var(--krds-color-light-gray-50);
+}
+
+/* Light background variants */
+.krds-badge.bg-light-primary {
+  background-color: var(--krds-color-light-primary-5);
+  color: var(--krds-color-light-primary-60);
+}
+.krds-badge.bg-light-secondary {
+  background-color: var(--krds-color-light-secondary-5);
+  color: var(--krds-color-light-secondary-60);
+}
+.krds-badge.bg-light-gray {
+  background-color: var(--krds-color-light-gray-5);
+  color: var(--krds-color-light-gray-60);
+}
+.krds-badge.bg-light-point {
+  background-color: var(--krds-color-light-point-5);
+  color: var(--krds-color-light-point-60);
+}
+.krds-badge.bg-light-danger {
+  background-color: var(--krds-color-light-danger-5);
+  color: var(--krds-color-light-danger-60);
+}
+.krds-badge.bg-light-warning {
+  background-color: var(--krds-color-light-warning-5);
+  color: var(--krds-color-light-warning-60);
+}
+.krds-badge.bg-light-success {
+  background-color: var(--krds-color-light-success-5);
+  color: var(--krds-color-light-success-60);
+}
+.krds-badge.bg-light-information {
+  background-color: var(--krds-color-light-information-5);
+  color: var(--krds-color-light-information-60);
+}
+.krds-badge.bg-light-disabled {
+  background-color: var(--krds-color-light-gray-5);
+  color: var(--krds-color-light-gray-40);
+}
+
+/* Number badge */
+.krds-badge.number {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 var(--krds-padding-2);
+  font-size: 1.2rem;
+  font-weight: 700;
+}

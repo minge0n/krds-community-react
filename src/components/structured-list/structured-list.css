@@ -1,0 +1,84 @@
+.krds-structured-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-3);
+}
+
+.krds-structured-list-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--krds-gap-4);
+  padding: var(--krds-padding-5) var(--krds-padding-6);
+  border: 1px solid var(--krds-light-color-border-gray-light);
+  border-radius: var(--krds-radius-medium2);
+  background-color: var(--krds-light-color-surface-white);
+  transition: box-shadow 0.15s ease;
+}
+
+.krds-structured-list-item:hover {
+  box-shadow: 0 2px 8px var(--krds-light-color-alpha-shadow2);
+}
+
+.krds-structured-list-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--krds-gap-2);
+  flex: 1;
+  min-width: 0;
+}
+
+.krds-structured-list-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--krds-padding-1) var(--krds-padding-3);
+  border-radius: var(--krds-radius-small3);
+  background-color: var(--krds-light-color-action-primary-hover);
+  color: var(--krds-light-color-text-primary);
+  font-size: var(--krds-pc-font-size-label-small);
+  font-weight: 600;
+  width: fit-content;
+}
+
+.krds-structured-list-title {
+  margin: 0;
+  font-size: var(--krds-pc-font-size-body-large);
+  font-weight: 700;
+  color: var(--krds-light-color-text-basic);
+  line-height: 1.4;
+}
+
+.krds-structured-list-desc {
+  margin: 0;
+  font-size: var(--krds-pc-font-size-body-medium);
+  color: var(--krds-light-color-text-gray);
+  line-height: 1.5;
+}
+
+.krds-structured-list-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--krds-gap-2);
+}
+
+.krds-structured-list-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--krds-padding-1) var(--krds-padding-3);
+  border-radius: var(--krds-radius-small3);
+  border: 1px solid var(--krds-light-color-border-gray);
+  font-size: var(--krds-pc-font-size-label-small);
+  color: var(--krds-light-color-text-gray);
+}
+
+.krds-structured-list-meta {
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-gray);
+}
+
+.krds-structured-list-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--krds-gap-2);
+  flex-shrink: 0;
+}

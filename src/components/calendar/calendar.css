@@ -1,0 +1,162 @@
+.krds-calendar {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--krds-gap-2);
+}
+
+.krds-calendar-label {
+  font-size: var(--krds-pc-font-size-label-medium);
+  color: var(--krds-light-color-text-basic);
+  font-weight: 600;
+}
+
+.krds-calendar-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 16rem;
+  height: var(--krds-size-height-7);
+  padding: 0 var(--krds-padding-5);
+  border: 1px solid var(--krds-light-color-input-border);
+  border-radius: var(--krds-radius-medium2);
+  background-color: var(--krds-light-color-input-surface);
+  font-family: inherit;
+  font-size: var(--krds-pc-font-size-body-medium);
+  color: var(--krds-light-color-text-basic);
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.krds-calendar-trigger:hover {
+  border-color: var(--krds-light-color-border-gray-dark);
+}
+
+.krds-calendar-trigger:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+
+.krds-calendar-trigger.is-error {
+  border-color: var(--krds-light-color-input-border-error);
+}
+
+.krds-calendar-trigger:disabled {
+  background-color: var(--krds-light-color-input-surface-disabled);
+  border-color: var(--krds-light-color-input-border-disabled);
+  color: var(--krds-light-color-text-disabled-on);
+  cursor: not-allowed;
+}
+
+.krds-calendar-placeholder {
+  color: var(--krds-light-color-text-disabled);
+}
+
+.krds-calendar-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--krds-light-color-icon-gray);
+}
+
+.krds-calendar-popup {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  z-index: 1000;
+  background-color: var(--krds-light-color-surface-white);
+  border: 1px solid var(--krds-light-color-border-gray-light);
+  border-radius: var(--krds-radius-medium2);
+  box-shadow: 0 4px 12px var(--krds-light-color-alpha-shadow2);
+  padding: var(--krds-padding-5);
+  min-width: 28rem;
+}
+
+.krds-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--krds-gap-4);
+}
+
+.krds-calendar-title {
+  font-size: var(--krds-pc-font-size-body-large);
+  font-weight: 700;
+  color: var(--krds-light-color-text-basic);
+}
+
+.krds-calendar-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: none;
+  background: none;
+  border-radius: var(--krds-radius-small3);
+  font-size: 2rem;
+  color: var(--krds-light-color-icon-gray);
+  cursor: pointer;
+}
+
+.krds-calendar-nav-btn:hover {
+  background-color: var(--krds-light-color-action-primary-hover);
+}
+
+.krds-calendar-nav-btn:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+
+.krds-calendar-grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.krds-calendar-weekday {
+  padding: var(--krds-padding-2);
+  font-size: var(--krds-pc-font-size-label-small);
+  font-weight: 600;
+  color: var(--krds-light-color-text-gray);
+  text-align: center;
+}
+
+.krds-calendar-cell {
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.krds-calendar-day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: none;
+  background: none;
+  border-radius: var(--krds-radius-round);
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-basic);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.krds-calendar-day:hover:not(.disabled):not(.selected) {
+  background-color: var(--krds-light-color-action-primary-hover);
+}
+
+.krds-calendar-day.selected {
+  background-color: var(--krds-light-color-button-primary-fill);
+  color: var(--krds-light-color-text-inverse-static);
+}
+
+.krds-calendar-day.disabled {
+  color: var(--krds-light-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.krds-calendar-day:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}

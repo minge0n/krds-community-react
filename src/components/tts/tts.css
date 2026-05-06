@@ -1,0 +1,47 @@
+.krds-tts {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--krds-gap-2);
+  padding: var(--krds-padding-2) var(--krds-padding-4);
+  border: 1px solid var(--krds-light-color-border-gray);
+  border-radius: var(--krds-radius-medium1);
+  background-color: var(--krds-light-color-surface-white);
+  font-family: inherit;
+  font-size: var(--krds-pc-font-size-label-small);
+  color: var(--krds-light-color-text-basic);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.krds-tts:hover {
+  background-color: var(--krds-light-color-action-primary-hover);
+  border-color: var(--krds-light-color-border-gray-dark);
+}
+
+.krds-tts:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+
+.krds-tts.is-playing {
+  background-color: var(--krds-light-color-action-primary-hover);
+  border-color: var(--krds-light-color-border-primary);
+  color: var(--krds-light-color-text-primary);
+}
+
+.krds-tts:disabled {
+  background-color: var(--krds-light-color-button-disabled-fill);
+  border-color: var(--krds-light-color-button-disabled-border);
+  color: var(--krds-light-color-text-disabled-on);
+  cursor: not-allowed;
+}
+
+.krds-tts-icon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.krds-tts-label {
+  white-space: nowrap;
+}

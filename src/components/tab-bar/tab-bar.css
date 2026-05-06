@@ -1,0 +1,57 @@
+.krds-tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--krds-light-color-surface-white);
+  border-top: 1px solid var(--krds-light-color-border-gray-light);
+  z-index: 100;
+}
+
+.krds-tab-bar-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.krds-tab-bar-item {
+  flex: 1;
+}
+
+.krds-tab-bar-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--krds-gap-1);
+  padding: var(--krds-padding-3) var(--krds-padding-2);
+  text-decoration: none;
+  color: var(--krds-light-color-text-subtle);
+  transition: color 0.15s ease;
+}
+
+.krds-tab-bar-link.active {
+  color: var(--krds-light-color-text-primary);
+}
+
+.krds-tab-bar-link:hover {
+  color: var(--krds-light-color-text-basic);
+}
+
+.krds-tab-bar-link:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: -2px;
+}
+
+.krds-tab-bar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.krds-tab-bar-label {
+  font-size: var(--krds-pc-font-size-label-small);
+  font-weight: 500;
+}

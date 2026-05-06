@@ -1,0 +1,88 @@
+.krds-critical-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--krds-gap-3);
+  padding: var(--krds-padding-5) var(--krds-padding-6);
+  border-radius: var(--krds-radius-medium2);
+  border: 1px solid transparent;
+}
+
+.krds-critical-alert.danger {
+  background-color: var(--krds-light-color-surface-danger);
+  border-color: var(--krds-light-color-border-danger);
+}
+
+.krds-critical-alert.danger .krds-critical-alert-icon {
+  color: var(--krds-light-color-icon-danger);
+}
+
+.krds-critical-alert.warning {
+  background-color: var(--krds-light-color-surface-warning);
+  border-color: var(--krds-light-color-border-warning);
+}
+
+.krds-critical-alert.warning .krds-critical-alert-icon {
+  color: var(--krds-light-color-icon-warning);
+}
+
+.krds-critical-alert.info {
+  background-color: var(--krds-light-color-surface-information);
+  border-color: var(--krds-light-color-border-information);
+}
+
+.krds-critical-alert.info .krds-critical-alert-icon {
+  color: var(--krds-light-color-icon-information);
+}
+
+.krds-critical-alert-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.1rem;
+}
+
+.krds-critical-alert-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.krds-critical-alert-title {
+  margin: 0 0 var(--krds-gap-1);
+  font-size: var(--krds-pc-font-size-label-medium);
+  font-weight: 700;
+  color: var(--krds-light-color-text-basic);
+}
+
+.krds-critical-alert-desc {
+  font-size: var(--krds-pc-font-size-body-small);
+  color: var(--krds-light-color-text-basic);
+  line-height: 1.5;
+}
+
+.krds-critical-alert-action {
+  margin-top: var(--krds-gap-3);
+}
+
+.krds-critical-alert-close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: none;
+  background: none;
+  border-radius: var(--krds-radius-round);
+  font-size: 1.8rem;
+  color: var(--krds-light-color-icon-gray);
+  cursor: pointer;
+}
+
+.krds-critical-alert-close:hover {
+  background-color: var(--krds-light-color-action-primary-hover);
+}
+
+.krds-critical-alert-close:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}

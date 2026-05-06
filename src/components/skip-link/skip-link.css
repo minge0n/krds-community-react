@@ -1,0 +1,21 @@
+#krds-skip-link {
+  position: relative;
+}
+
+#krds-skip-link a {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: var(--krds-padding-4) var(--krds-padding-6);
+  background-color: var(--krds-light-color-surface-inverse);
+  color: var(--krds-light-color-text-inverse-static);
+  font-size: var(--krds-pc-font-size-body-medium);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#krds-skip-link a:focus {
+  top: 0;
+}
