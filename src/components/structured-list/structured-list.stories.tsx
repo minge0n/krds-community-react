@@ -22,6 +22,13 @@ const meta: Meta<typeof StructuredList> = {
   title: "Components/StructuredList",
   component: StructuredList,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {},
   args: {},
 };

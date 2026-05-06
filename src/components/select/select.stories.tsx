@@ -21,6 +21,13 @@ const meta: Meta<typeof Select> = {
   title: "Components/Select",
   component: Select,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     label: { control: "text", description: "라벨" },
     placeholder: { control: "text", description: "플레이스홀더" },

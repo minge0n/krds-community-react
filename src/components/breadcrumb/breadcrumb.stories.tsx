@@ -23,6 +23,13 @@ const meta: Meta<typeof Breadcrumb> = {
   title: "Components/Breadcrumb",
   component: Breadcrumb,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     label: {
       control: "text",

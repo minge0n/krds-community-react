@@ -23,6 +23,13 @@ const meta: Meta<typeof CriticalAlert> = {
   title: "Components/CriticalAlert",
   component: CriticalAlert,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     variant: {
       control: "select",

@@ -24,6 +24,13 @@ const meta: Meta<typeof Table> = {
   title: "Components/Table",
   component: Table,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {},
   args: {},
 };

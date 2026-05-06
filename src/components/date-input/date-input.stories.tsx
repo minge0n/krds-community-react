@@ -23,6 +23,13 @@ const meta: Meta<typeof DateInput> = {
   title: "Components/DateInput",
   component: DateInput,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     label: {
       control: "text",

@@ -23,6 +23,13 @@ const meta: Meta<typeof Disclosure> = {
   title: "Components/Disclosure",
   component: Disclosure,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     label: {
       control: "text",

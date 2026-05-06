@@ -21,6 +21,13 @@ const meta: Meta<typeof Accordion> = {
   title: "Components/Accordion",
   component: Accordion,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     variant: {
       control: "select",

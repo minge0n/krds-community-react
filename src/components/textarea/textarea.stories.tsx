@@ -23,6 +23,13 @@ const meta: Meta<typeof Textarea> = {
   title: "Components/Textarea",
   component: Textarea,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     label: {
       control: "text",

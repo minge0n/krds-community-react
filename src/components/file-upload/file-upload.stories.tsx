@@ -24,6 +24,13 @@ const meta: Meta<typeof FileUpload> = {
   title: "Components/FileUpload",
   component: FileUpload,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     label: {
       control: "text",

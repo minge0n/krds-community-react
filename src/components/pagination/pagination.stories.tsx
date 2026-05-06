@@ -24,6 +24,13 @@ const meta: Meta<typeof Pagination> = {
   title: "Components/Pagination",
   component: Pagination,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {},
   args: {},
 };

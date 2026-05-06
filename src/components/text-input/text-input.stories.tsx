@@ -22,6 +22,13 @@ const meta: Meta<typeof TextInput> = {
   title: "Components/TextInput",
   component: TextInput,
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "600px" }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     label: { control: "text", description: "라벨 텍스트" },
     placeholder: { control: "text", description: "플레이스홀더" },
