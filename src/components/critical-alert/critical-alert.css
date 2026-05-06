@@ -1,4 +1,5 @@
 .krds-critical-alert {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   gap: var(--krds-gap-3);
