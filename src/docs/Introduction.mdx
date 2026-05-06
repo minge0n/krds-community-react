@@ -1,0 +1,83 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="소개" />
+
+# KRDS Community React
+
+대한민국 디지털 정부서비스 UI/UX 디자인 시스템(KRDS)의 커뮤니티 React 구현체입니다.
+
+## 특징
+
+- **Base UI 헤드리스** — 접근성이 검증된 [Base UI](https://base-ui.com) 위에 KRDS 스타일링
+- **56개 컴포넌트** — 공식 KRDS 55개 + Dropdown
+- **Next.js 호환** — `'use client'` 자동 삽입
+- **CSS 토큰 기반** — KRDS 공식 디자인 토큰 사용
+- **접근성 우선** — WCAG AA 준수, High Contrast 모드 지원
+- **Pretendard GOV** — 정부 전용 가변 폰트 CDN 제공
+
+## 설치
+
+```bash
+npm install krds-community-react
+```
+
+## 기본 사용법
+
+```tsx
+import { Button, TextInput, Modal } from "krds-community-react";
+import "krds-community-react/styles";
+
+function App() {
+  return (
+    <div>
+      <Button variant="primary" size="large">
+        신청하기
+      </Button>
+    </div>
+  );
+}
+```
+
+## 디자인 원칙
+
+### 색상 비율 (60-30-10)
+| 비율 | 역할 | 예시 |
+|------|------|------|
+| 60% | 배경·중립색 | surface, background, text |
+| 30% | 세컨더리 | border, divider, secondary actions |
+| 10% | 프라이머리 액션 | button, link, focus ring |
+
+### 타이포그래피
+- **서체**: Pretendard GOV (Regular 400 + Bold 700)
+- **최소 본문**: 17px
+- **Line height**: 150%
+- **Letter spacing**: 0 (Display만 1px)
+
+### 형태
+- **버튼/인풋**: 6px radius
+- **카드**: 10px radius
+- **배너/모달**: 12px radius (최대)
+- **계산식**: 컨테이너 높이 × 1/8, 짝수 반올림
+
+## 컴포넌트 카테고리
+
+| 카테고리 | 컴포넌트 |
+|----------|----------|
+| 아이덴티티 | Masthead, Identifier, Header, Footer |
+| 탐색 | SkipLink, MainMenu, Breadcrumb, SideNavigation, InPageNavigation, Pagination |
+| 레이아웃 및 표현 | StructuredList, CriticalAlert, Calendar, Disclosure, Modal, Badge, Accordion, Image, Carousel, Tab, Table, TextList, Favicon |
+| 액션 | Link, Button, FAB, Dropdown |
+| 선택 | Radio, Checkbox, Select, Tag, ToggleSwitch |
+| 피드백 | StepIndicator, Spinner |
+| 도움 | HelpPanel, TutorialPanel, ContextualHelp, CoachMark, Tooltip, TTS |
+| 입력 | DateInput, Textarea, TextInput, FileUpload |
+| 설정 | LanguageSwitcher, Resize |
+| 콘텐츠 | AccessibleMedia, VisuallyHidden |
+| 모바일 | RangeSlider, BackButton, BottomSheet, QuantityToggle, Toast, Snackbar, TabBar, SplashScreen |
+
+## 참고 링크
+
+- [KRDS 공식 사이트](https://www.krds.go.kr)
+- [KRDS 공식 Storybook](https://www.krds.go.kr/storybook/react/)
+- [GitHub](https://github.com/minge0n/krds-community-react)
+- [Base UI](https://base-ui.com)

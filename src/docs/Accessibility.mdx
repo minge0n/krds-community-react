@@ -1,0 +1,119 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="가이드/접근성" />
+
+# 접근성 가이드
+
+KRDS는 모든 국민이 디지털 정부서비스를 이용할 수 있도록 접근성을 최우선으로 설계합니다.
+
+## WCAG 대비 기준
+
+| 등급 | 대형 텍스트 | 일반 텍스트 | KRDS Magic Number |
+|------|------------|------------|-------------------|
+| AA | 3:1 | 4.5:1 | 40 / 50 |
+| AAA | 4.5:1 | 7:1 | 50 / 70 |
+| High Contrast | 4.5:1 | 15:1 | 50 / 90 |
+
+> 대형 텍스트: 24px 이상 또는 Bold 18.66px 이상
+
+## 키보드 탐색
+
+모든 인터랙티브 요소는 키보드로 접근 가능해야 합니다:
+
+| 키 | 동작 |
+|----|------|
+| `Tab` | 다음 포커스 가능 요소로 이동 |
+| `Shift + Tab` | 이전 요소로 이동 |
+| `Enter` / `Space` | 버튼 클릭, 체크박스 토글 |
+| `Arrow Keys` | 라디오 그룹, 탭, 메뉴 내 이동 |
+| `Escape` | 모달/팝업 닫기 |
+| `Home` / `End` | 목록 처음/끝으로 이동 |
+
+## 포커스 표시
+
+모든 포커스 가능 요소에 `:focus-visible` 아웃라인을 제공합니다:
+
+```css
+:focus-visible {
+  outline: 2px solid var(--krds-light-color-border-primary);
+  outline-offset: 2px;
+}
+```
+
+## 스크린 리더 지원
+
+### VisuallyHidden 컴포넌트
+
+시각적으로 숨기되 스크린 리더가 읽을 수 있는 텍스트:
+
+```tsx
+import { VisuallyHidden } from "krds-community-react";
+
+// 아이콘 버튼에 라벨 제공
+<Button iconOnly icon={<SearchIcon />}>
+  <VisuallyHidden>검색</VisuallyHidden>
+</Button>
+
+// 추가 맥락 제공
+<a href="/notices">
+  공지사항 <VisuallyHidden>목록 보기</VisuallyHidden>
+</a>
+```
+
+### ARIA 속성 자동 적용
+
+Base UI 기반 컴포넌트는 ARIA 속성을 자동으로 관리합니다:
+
+- **Accordion**: `aria-expanded`, `aria-controls`
+- **Modal**: `aria-modal`, `aria-labelledby`, focus trap
+- **Tabs**: `role="tablist"`, `aria-selected`
+- **Tooltip**: `aria-describedby`
+- **Select**: `aria-expanded`, `aria-activedescendant`
+
+## 색맹 대응
+
+색상만으로 정보를 전달하지 않습니다:
+
+```tsx
+// ❌ 색상만으로 상태 표시
+<Badge variant="bg-danger">오류</Badge>
+
+// ✅ 색상 + 텍스트 + 아이콘으로 중복 전달
+<Badge variant="bg-danger">
+  <ErrorIcon /> 오류 발생
+</Badge>
+```
+
+**금지 조합:**
+- 빨강 + 초록 (적록색맹 99%)
+- 색상만으로 필수/선택 구분
+
+## High Contrast 모드
+
+선명한 화면 모드를 지원합니다:
+
+```html
+<!-- HTML에 클래스 추가 -->
+<html data-krds-mode="high-contrast">
+```
+
+변경 사항:
+- 캔버스: 흰색 → 검정
+- 텍스트: 어두운 회색 → 밝은 회색
+- 보더: 두께 증가 (1px → 2px)
+- 대비: 최소 15:1 (본문 텍스트)
+
+## 체크리스트
+
+컴포넌트 개발 시 확인사항:
+
+- [ ] 키보드만으로 모든 기능 사용 가능
+- [ ] `:focus-visible` 아웃라인 표시
+- [ ] 스크린 리더로 모든 정보 접근 가능
+- [ ] 색상 외 추가 수단으로 정보 전달
+- [ ] 텍스트 대비 4.5:1 이상
+- [ ] UI 요소 대비 3:1 이상
+- [ ] 터치 타겟 최소 48px (모바일)
+- [ ] `lang="ko"` 속성 설정
+- [ ] 이미지에 `alt` 텍스트 제공
+- [ ] 폼 요소에 `label` 연결
