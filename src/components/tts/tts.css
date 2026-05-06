@@ -10,7 +10,7 @@
   font-size: var(--krds-pc-font-size-label-small);
   color: var(--krds-light-color-text-basic);
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-tts:hover {

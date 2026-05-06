@@ -33,7 +33,7 @@
   font-size: var(--krds-pc-font-size-body-small);
   color: var(--krds-light-color-text-basic);
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-footer-link:hover {

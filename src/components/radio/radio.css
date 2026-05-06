@@ -21,7 +21,7 @@
   border-radius: 50%;
   background-color: var(--krds-light-color-surface-white);
   cursor: pointer;
-  transition: border-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-form-check input[type="radio"]:checked {

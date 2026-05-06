@@ -29,7 +29,7 @@
   font-family: inherit;
   font-size: var(--krds-pc-font-size-body-xsmall);
   color: var(--krds-light-color-text-subtle);
-  transition: color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-tab-bar-link.active {

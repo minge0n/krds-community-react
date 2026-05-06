@@ -40,7 +40,7 @@
   color: var(--krds-light-color-text-basic);
   cursor: pointer;
   border-radius: var(--krds-radius-medium1);
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-main-menu-link:hover {
@@ -61,7 +61,7 @@
   width: 1.4rem;
   height: 1.4rem;
   color: var(--krds-light-color-icon-gray);
-  transition: transform 0.2s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-main-menu-chevron.expanded {
@@ -94,7 +94,7 @@
   color: var(--krds-light-color-text-basic);
   text-align: left;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-main-menu-sublink:hover {
@@ -148,7 +148,7 @@
     box-shadow: 4px 0 16px var(--krds-light-color-alpha-shadow2);
     z-index: 1200;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: var(--krds-transition-base);
     overflow-y: auto;
   }
 

@@ -19,7 +19,7 @@
   font-size: var(--krds-pc-font-size-label-large);
   line-height: 1;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-quantity-toggle-btn:hover:not(:disabled) {

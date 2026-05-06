@@ -67,7 +67,7 @@
   height: 100%;
   background-color: var(--krds-light-color-button-primary-fill);
   border-radius: var(--krds-radius-round);
-  transition: width 0.3s ease;
+  transition: var(--krds-transition-collapse-width);
 }
 
 .krds-tutorial-panel-step-count {
@@ -109,7 +109,7 @@
   font-family: inherit;
   font-size: var(--krds-pc-font-size-label-medium);
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-tutorial-panel-btn.prev {

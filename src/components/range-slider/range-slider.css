@@ -42,7 +42,7 @@
   border: 2px solid var(--krds-light-color-border-primary);
   transform: translate(-50%, -50%);
   cursor: pointer;
-  transition: box-shadow 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-range-slider-thumb:hover {

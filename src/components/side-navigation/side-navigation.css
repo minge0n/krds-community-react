@@ -44,7 +44,7 @@
   color: var(--krds-light-color-text-basic);
   text-align: left;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-side-navigation-link:hover {
@@ -70,7 +70,7 @@
 .krds-side-navigation-chevron {
   flex-shrink: 0;
   color: var(--krds-light-color-icon-gray);
-  transition: transform 0.2s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-side-navigation-chevron.expanded {

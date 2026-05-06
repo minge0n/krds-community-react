@@ -806,3 +806,9 @@
   --krds-radius-xlarge2: var(--krds-number-7);
   --krds-radius-max: var(--krds-number-max);
 }
+
+  /* TRANSITION */
+  --krds-transition-base: .4s ease-in-out;
+  --krds-transition-fade: opacity .4s linear;
+  --krds-transition-collapse: max-height .4s ease;
+  --krds-transition-collapse-width: width .4s ease;

@@ -16,9 +16,7 @@
   color: var(--krds-light-color-text-basic);
   cursor: pointer;
   font-family: inherit;
-  transition:
-    background-color 0.15s ease,
-    color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-resize-btn + .krds-resize-btn {

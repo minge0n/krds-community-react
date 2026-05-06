@@ -11,7 +11,7 @@
   font-size: var(--krds-pc-font-size-label-medium);
   line-height: 1;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-back-button:hover {

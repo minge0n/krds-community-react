@@ -15,7 +15,7 @@
   font-size: var(--krds-pc-font-size-body-small);
   color: var(--krds-light-color-text-basic);
   cursor: pointer;
-  transition: border-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-language-switcher-trigger:hover {
@@ -43,7 +43,7 @@
   width: 1.4rem;
   height: 1.4rem;
   color: var(--krds-light-color-icon-gray);
-  transition: transform 0.2s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-language-switcher-chevron.expanded {
@@ -73,7 +73,7 @@
   font-size: var(--krds-pc-font-size-body-small);
   color: var(--krds-light-color-text-basic);
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-language-switcher-option:hover {

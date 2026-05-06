@@ -26,7 +26,7 @@
   font-size: var(--krds-pc-font-size-body-medium);
   color: var(--krds-light-color-text-basic);
   cursor: pointer;
-  transition: border-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-calendar-trigger:hover {
@@ -139,7 +139,7 @@
   font-size: var(--krds-pc-font-size-body-small);
   color: var(--krds-light-color-text-basic);
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-calendar-day:hover:not(.disabled):not(.selected) {

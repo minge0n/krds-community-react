@@ -14,7 +14,7 @@
   border: 1px solid var(--krds-light-color-border-gray-light);
   border-radius: var(--krds-radius-medium2);
   background-color: var(--krds-light-color-surface-white);
-  transition: box-shadow 0.15s ease;
+  transition: var(--krds-transition-base);
 }
 
 .krds-structured-list-item:hover {
