@@ -10,6 +10,7 @@
   background-color: var(--krds-light-color-button-primary-fill);
   color: var(--krds-light-color-text-inverse-static);
   cursor: pointer;
+  font-family: inherit;
   box-shadow: 0 4px 12px var(--krds-light-color-alpha-shadow3);
   transition:
     background-color 0.15s ease,

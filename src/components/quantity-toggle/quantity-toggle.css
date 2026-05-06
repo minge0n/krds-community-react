@@ -15,7 +15,9 @@
   border: none;
   background-color: var(--krds-light-color-surface-white);
   color: var(--krds-light-color-text-basic);
+  font-family: inherit;
   font-size: var(--krds-pc-font-size-label-large);
+  line-height: 1;
   cursor: pointer;
   transition: background-color 0.15s ease;
 }

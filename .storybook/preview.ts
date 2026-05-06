@@ -3,6 +3,7 @@ import "../src/styles/base.css";
 import "../src/styles/tokens.css";
 
 const preview: Preview = {
+  tags: ["autodocs"],
   parameters: {
     controls: {
       matchers: {
